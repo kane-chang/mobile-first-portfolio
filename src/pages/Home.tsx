@@ -3,7 +3,7 @@ import React from "react";
 const Home = () => {
   return (
     <>
-      <div className="h-dvh bg-white/30 flex items-center  px-5" id="hero">
+      <div className="h-dvh bg-white/30 flex items-center px-5" id="hero">
         <div className="space-y-5">
           <h1 className="text-accentOrange font-inter font-bold text-5xl">
             .kane-chang
@@ -25,7 +25,7 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="h-dvh bg-white/20 flex items-center px-5 bg-[url('./assets/sgbg_mobile.png')] md:bg-[url('./assets/sgbg_tablet.png')] lg:bg-[url('./assets/sgbg.png')] xl:bg-[url('./assets/sgbg_xl.png')] bg-center bg-cover bg-no-repeat"
+        className="h-dvh flex items-center px-5 bg-[url('./assets/sgbg_mobile.png')] md:bg-[url('./assets/sgbg_tablet.png')] lg:bg-[url('./assets/sgbg.png')] xl:bg-[url('./assets/sgbg_xl.png')] bg-center bg-cover bg-no-repeat"
         id="background"
       >
         <div className="space-y-5">
@@ -40,6 +40,26 @@ const Home = () => {
           </h2>
           <h2 className="text-white font-inter text-4xl font-bold">"Games",</h2>
           <p className="text-white font-inconsolata">&#93;;</p>
+        </div>
+      </div>
+      <div className="h-dvh bg-white/10 flex items-center px-5" id="projectOne">
+        <div className="w-full border p-5 space-y-5 project-info">
+          <img src="/src/assets/gamesync_logo.png" alt="" />
+          <p className="font-inconsolata text-white">
+            A <span className="text-accentBlue">streamlined</span> and{" "}
+            <span className="text-accentBlue">intuitive</span> scheduler
+            tailored for <span className="text-accentBlue">busy gamers</span>,
+            by gamers. Estimate completion dates, share your calendars and
+            conquer levels together effortlessly!
+          </p>
+          <div className="flex space-x-3">
+            <button className="font-inter border rounded-3xl text-xl px-7 py-1 hover:text-accentBlue hover:border-accentBlue transition">
+              View
+            </button>
+            <button className="border rounded-3xl text-xl px-3 group hover:border-accentBlue transition">
+              <i className="fa-brands fa-github group-hover:text-accentBlue transition"></i>
+            </button>
+          </div>
         </div>
       </div>
     </>

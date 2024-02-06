@@ -14,7 +14,7 @@ const NavTabs = () => {
   return (
     <>
       <nav
-        className="fixed py-5 px-10 md:px-20 lg:px-32 w-full flex justify-between text-xl"
+        className="fixed py-5 px-5 md:px-20 lg:px-32 w-full flex justify-between text-xl"
         id="navbar"
       >
         <div className="flex space-x-5">
@@ -97,19 +97,19 @@ const NavTabs = () => {
             about()
           </NavLink>
           <a
-            className="text-accentOrange flex items-center hover:text-accentOrange/70 transition"
+            className="text-accentOrange flex items-center group hover:text-accentOrange/70 transition"
             href="https://github.com/kane-chang"
             target="_blank"
           >
-            <i className="fa-brands fa-github text-xl text-accentOrange "></i>
+            <i className="fa-brands fa-github text-xl text-accentOrange group-hover:text-accentOrange/70 transition mr-2"></i>
             GitHub
           </a>
           <a
-            className="text-accentOrange flex items-center hover:text-accentOrange/70 transition"
+            className="text-accentOrange flex items-center group hover:text-accentOrange/70 transition"
             href="https://www.linkedin.com/in/kane-chang/"
             target="_blank"
           >
-            <i className="fa-brands fa-linkedin text-xl text-accentOrange"></i>
+            <i className="fa-brands fa-linkedin text-xl text-accentOrange group-hover:text-accentOrange/70 transition mr-2"></i>
             LinkedIn
           </a>
         </div>
