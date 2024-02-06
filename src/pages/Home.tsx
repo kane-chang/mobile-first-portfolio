@@ -1,4 +1,5 @@
 import React from "react";
+import ContactButton from "../components/ContactButton";
 
 const Home = () => {
   return (
@@ -42,8 +43,11 @@ const Home = () => {
           <p className="text-white font-inconsolata">&#93;;</p>
         </div>
       </div>
-      <div className="h-dvh bg-white/10 flex items-center px-5" id="projectOne">
-        <div className="w-full border p-5 space-y-5 project-info">
+      <div
+        className="h-dvh bg-white/10 flex flex-col justify-center md:flex-row md:items-center px-5"
+        id="projectOne"
+      >
+        <div className="w-full p-5 space-y-5 rounded-xl glass-bg">
           <img src="/src/assets/gamesync_logo.png" alt="" />
           <p className="font-inconsolata text-white">
             A <span className="text-accentBlue">streamlined</span> and{" "}
@@ -59,6 +63,22 @@ const Home = () => {
             <button className="border rounded-3xl text-xl px-3 group hover:border-accentBlue transition">
               <i className="fa-brands fa-github group-hover:text-accentBlue transition"></i>
             </button>
+          </div>
+        </div>
+        <div className="project-cards">Cards go here!!</div>
+      </div>
+      <div className="h-dvh bg-white/20 flex items-end" id="contact">
+        <div className="w-full p-5 space-y-5 rounded-t-xl glass-bg">
+          <h1 className="text-white font-inter font-bold text-5xl">
+            Contact
+          </h1>
+          <p className="text-white font-inconsolata font-bold">Reach out to me via:</p>
+          <div className="space-y-3">
+            <div className="space-x-3 flex">
+            <ContactButton text="GitHub" url="https://github.com/kane-chang"/>
+            <ContactButton text="LinkedIn" url="https://www.linkedin.com/in/kane-chang/"/>
+            </div>
+            <ContactButton text="kane.chang.fl@gmail.com" url="mailto:kane.chang.fl@gmail.com"/>
           </div>
         </div>
       </div>
