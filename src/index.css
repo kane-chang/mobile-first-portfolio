@@ -9,7 +9,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #121212;
+  background-color: black;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,4 +22,12 @@
   padding: 0;
   margin: 0;
   color: white;
+}
+
+#nav-overlay {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.09);
+  border-top: 2px solid rgba(225, 225, 225, 0.4);
+  border-left: 2px solid rgba(225, 225, 225, 0.5);
 }
