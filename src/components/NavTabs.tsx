@@ -14,7 +14,7 @@ const NavTabs = () => {
   return (
     <>
       <nav
-        className="fixed py-5 px-5 md:px-20 lg:px-32 w-full flex justify-between text-xl z-20"
+        className="fixed py-5 px-5 md:px-16 lg:px-36 xl:px-60 w-full flex justify-between text-xl z-20"
         id="navbar"
       >
         <div className="flex space-x-5">
@@ -32,7 +32,7 @@ const NavTabs = () => {
           <a
             className="hidden md:flex text-accentOrange hover:text-accentOrange/70 transition"
             href="https://drive.google.com/file/d/1tC2l8JGctKf1myJKMnhQVQFyUexpRQZn/view"
-            target="blank"
+            target="_blank"
           >
             .cv
           </a>
@@ -69,7 +69,7 @@ const NavTabs = () => {
       {/* nav menu */}
       <div
         id="nav-overlay"
-        className=" w-3/4 fixed left-full top-0 h-full transform transition ease-in-out duration-500 md:hidden rounded-l-3xl z-50"
+        className=" w-10/12 fixed left-full top-0 h-full transform transition ease-in-out duration-500 md:hidden rounded-l-3xl z-50"
       >
         <div className="flex px-10 py-10 text-xl text-inter font-bold items-center justify-between">
           <h2>Menu</h2>
@@ -81,7 +81,7 @@ const NavTabs = () => {
           <a
             className="text-accentOrange hover:text-accentOrange/70 transition"
             href="https://drive.google.com/file/d/1tC2l8JGctKf1myJKMnhQVQFyUexpRQZn/view"
-            target="blank"
+            target="_blank"
           >
             .cv
           </a>
