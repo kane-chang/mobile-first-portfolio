@@ -1,5 +1,6 @@
 import React from "react";
 import ContactButton from "../components/ContactButton";
+import ProjectCard from "../components/ProjectCard";
 
 const Home = () => {
   return (
@@ -56,10 +57,10 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="h-dvh bg-white/10 flex flex-col justify-center md:flex-row md:items-center px-6 md:px-16 lg:px-36 xl:px-60"
+        className="h-dvh bg-white/10 flex flex-col justify-center lg:flex-row lg:items-center px-6 md:px-16 lg:px-36 xl:px-60"
         id="projectOne"
       >
-        <div className="w-full md:w-8/12 p-4 space-y-4 rounded-xl glass-bg">
+        <div className="w-full lg:w-8/12 p-4 space-y-4 rounded-xl glass-bg">
           <img src="/src/assets/gamesync_logo.png" alt="" />
           <p className="font-inconsolata md:text-xl xl:text-2xl text-white">
             A <span className="text-accentBlue">streamlined</span> and{" "}
@@ -99,7 +100,33 @@ const Home = () => {
             </a>
           </div>
         </div>
-        <div className="md:w-4/12 project-cards border">Cards go here!!</div>
+        <div className="w-full lg:w-4/12 project-cards">
+          <ProjectCard header="My Role" paragraph="Sole Engineer" key="role" />
+          <ProjectCard header="Background" paragraph="Sole Engineer" key="bg" />
+          <ProjectCard
+            header="Tech Stack"
+            list={true}
+            listItems={[
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "React",
+              "Tailwind",
+              "Axios",
+            ]}
+            key="list"
+          />
+          <ProjectCard
+            header="Sneak Peek"
+            image="/src/assets/homepage.jpg"
+            key="peek"
+          />
+          <ProjectCard
+            header="Closing Thoughts"
+            paragraph="Sole Engineer"
+            key="closing"
+          />
+        </div>
       </div>
       <div
         className="h-dvh bg-white/20 flex items-end pb-28 px-6 md:px-16 lg:px-36 xl:px-60"
