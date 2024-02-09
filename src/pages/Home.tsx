@@ -1,6 +1,7 @@
 import React from "react";
 import ContactButton from "../components/ContactButton";
 import ProjectCard from "../components/ProjectCard";
+import AboutCard from "../components/AboutCard";
 
 const Home = () => {
   return (
@@ -19,7 +20,7 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="h-dvh bg-white/50 flex items-center px-6 md:px-16 lg:px-36 xl:px-60"
+        className="h-dvh bg-white/50 flex flex-col items-center justify-center px-6 md:px-16 lg:px-36 xl:px-60 space-y-16"
         id="about"
       >
         <div className="space-y-4">
@@ -32,6 +33,32 @@ const Home = () => {
             experience across roles such as communications, non-profit and
             education.
           </p>
+        </div>
+        <div className="about-cards flex space-x-3">
+          <AboutCard
+            header="Characteristics"
+            paragraph="Very good and short and sweet description of this quality blah blah blah"
+            tagOne="Personality"
+            tagTwo="Story"
+            iconImg="/src/assets/smile.svg"
+            imgAlt="Smile Icon"
+          />
+          {/* <AboutCard
+            header="Technical Skills"
+            paragraph="Very good and short and sweet description of this quality blah blah blah"
+            tagOne="Hard Skills"
+            tagTwo="Tech"
+            iconImg="/src/assets/gear.svg"
+            imgAlt="Gear Icon"
+          />
+          <AboutCard
+            header="Soft Skills"
+            paragraph="Very good and short and sweet description of this quality blah blah blah"
+            tagOne="Soft Skills"
+            tagTwo="People"
+            iconImg="/src/assets/chat.svg"
+            imgAlt="Chat Icon"
+          /> */}
         </div>
       </div>
       <div
