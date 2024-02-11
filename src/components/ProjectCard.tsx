@@ -18,8 +18,8 @@ const ProjectCard = ({
   listItems,
 }: ProjectCardProps) => {
   return (
-    <div className="flex flex-col bg-black space-y-4 rounded-xl border p-4 h-72">
-      <h2 className="font-inter font-medium text-4xl">{header}</h2>
+    <div className="flex flex-col bg-black rounded-xl border p-6 h-72 absolute w-full project-card">
+      <h2 className="font-inter font-medium text-4xl pb-4">{header}</h2>
       {paragraph ? <p className="font-inconsolata">{paragraph}</p> : null}
       {image ? <img className="w-full" src={image} alt={alt} /> : null}
       {list ? (
