@@ -10,6 +10,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   useGSAP(() => {
+    gsap.to("#gradientBg", {
+      scrollTrigger: {
+        trigger: "#gradientBg",
+        start: "top top",
+        endTrigger: "#contact",
+        end: "bottom top",
+        pin: ".gradient-container",
+        markers: true,
+      }
+    })
     gsap.set(".project-card", { position: "absolute" });
 
     gsap.to(".project-card", {
@@ -17,7 +27,7 @@ const Home = () => {
       stagger: 0.5,
       scrollTrigger: {
         trigger: ".project-container",
-        markers: true,
+        // markers: true,
         start: "top 15%",
         end: "+1500px",
         scrub: 0.5,
@@ -30,7 +40,19 @@ const Home = () => {
   return (
     <>
       <div
-        className="h-svh md:h-screen bg-white/30 flex items-center px-6 md:px-16 lg:px-36 xl:px-60"
+        className="h-svh w-svw md:h-screen md:w-screen absolute overflow-hidden top-0 left-0 bg-black -z-10"
+        id="gradientBg"
+      >
+        <div className="gradient-container h-full w-full">
+          <div className="g1 absolute animate-vert"></div>
+          <div className="g2 absolute animate-circle-reverse"></div>
+          <div className="g3 absolute animate-circle-linear"></div>
+          <div className="g4 absolute animate-horizontal"></div>
+          <div className="g5 absolute animate-circle-ease"></div>
+        </div>
+      </div>
+      <div
+        className="h-svh md:h-screen flex items-center px-6 md:px-16 lg:px-36 xl:px-60"
         id="hero"
       >
         <div className="space-y-4">
@@ -107,16 +129,12 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="h-[110svh] md:h-[110vh] lg:h-[130vh] flex px-6 md:px-16 lg:px-36 xl:px-60 pt-32 lg:pt-48"
+        className="h-[130svh] md:h-[110vh] lg:h-[130vh] flex px-6 md:px-16 lg:px-36 xl:px-60 pt-32 lg:pt-48"
         id="projectOne"
       >
         <div className="w-full flex flex-col lg:flex-row relative project-container">
           <div className="w-full lg:w-7/12 p-4 space-y-4 rounded-xl glass-bg md:pb-8 lg:pb-40 xl:pb-[36rem]">
-            <img
-              className="md:w-2/3"
-              src="/gamesync_logo.png"
-              alt=""
-            />
+            <img className="md:w-2/3" src="/gamesync_logo.png" alt="" />
             <p className="font-inconsolata md:text-xl xl:text-2xl text-white md:pb-16 xxl:pb-56">
               A <span className="text-accentBlue">streamlined</span> and{" "}
               <span className="text-accentBlue">intuitive</span> scheduler
@@ -205,7 +223,8 @@ const Home = () => {
             Contact
           </h1>
           <p className="text-white font-inconsolata md:text-xl xl:text-2xl font-bold">
-            Interested in collaborating? Keen to chat about web development? Feel free to reach me via these channels!
+            Interested in collaborating? Keen to chat about web development?
+            Feel free to reach me via these channels!
           </p>
           <div className="space-y-3 pt-36">
             <ContactButton text="GitHub" url="https://github.com/kane-chang" />
