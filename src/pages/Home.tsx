@@ -30,7 +30,7 @@ const Home = () => {
   return (
     <>
       <div
-        className="h-dvh bg-white/30 flex items-center px-6 md:px-16 lg:px-36 xl:px-60"
+        className="h-svh md:h-screen bg-white/30 flex items-center px-6 md:px-16 lg:px-36 xl:px-60"
         id="hero"
       >
         <div className="space-y-4">
@@ -43,7 +43,7 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="h-dvh bg-white/50 flex flex-col justify-center px-6 md:px-16 lg:px-36 xl:px-60 space-y-16"
+        className="h-svh md:h-screen bg-white/50 flex flex-col justify-center px-6 md:px-16 lg:px-36 xl:px-60 space-y-16"
         id="about"
       >
         <div className="space-y-4">
@@ -85,7 +85,7 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="h-dvh flex items-center px-6 md:px-16 lg:px-36 xl:px-60 bg-[url('./assets/sgbg_mobile.png')] md:bg-[url('./assets/sgbg_tablet.png')] lg:bg-[url('./assets/sgbg.png')] xl:bg-[url('./assets/sgbg_xl.png')] bg-center bg-cover bg-no-repeat"
+        className="h-svh md:h-screen flex items-center px-6 md:px-16 lg:px-36 xl:px-60 bg-[url('./assets/sgbg_mobile.png')] md:bg-[url('./assets/sgbg_tablet.png')] lg:bg-[url('./assets/sgbg.png')] xl:bg-[url('./assets/sgbg_xl.png')] bg-center bg-cover bg-no-repeat"
         id="background"
       >
         <div className="space-y-4">
@@ -107,7 +107,7 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="h-dvh flex px-6 md:px-16 lg:px-36 xl:px-60 pt-32 lg:pt-48"
+        className="h-[110svh] md:h-[110vh] lg:h-[130vh] flex px-6 md:px-16 lg:px-36 xl:px-60 pt-32 lg:pt-48"
         id="projectOne"
       >
         <div className="w-full flex flex-col lg:flex-row relative project-container">
@@ -195,7 +195,7 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="h-dvh bg-white/20 flex items-end pb-28 px-6 md:px-16 lg:px-36 xl:px-60"
+        className="h-svh md:h-screen bg-white/20 flex items-end pb-28 px-6 md:px-16 lg:px-36 xl:px-60"
         id="contact"
       >
         <div className="w-full p-4 md:w-9/12 space-y-4 rounded-xl glass-bg">
