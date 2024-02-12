@@ -10,7 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   useGSAP(() => {
-
     /**gradient background pinned */
     gsap.to("#gradientBg", {
       scrollTrigger: {
@@ -24,8 +23,39 @@ const Home = () => {
       },
     });
 
+    gsap.to("#gradientBg", {
+      scrollTrigger: {
+        trigger: "#gradientBg",
+        start: "30% top",
+        // markers: true,
+        scrub: true,
+      },
+      "--color1": "255,160,0",
+    });
 
+    /** about section animation */
+    let t1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#about",
+        pin: true, // pin the trigger element while active
+        pinSpacing: false,
+        start: "top top", // when the top of the trigger hits the top of the viewport
+        endTrigger: "#about-spacer",
+        end: "20% top", // end after scrolling 500px beyond the start
+        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        snap: {
+          snapTo: "labels", // snap to the closest label in the timeline
+          duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
+          delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
+          ease: "power1.inOut", // the ease of the snap animation ("power3" by default)
+        },
+        anticipatePin: 1,
+      },
+    });
 
+    t1.addLabel("cardOne")
+      .from(".about-card", { opacity: 0, xPercent: 100, stagger: 0.8 })
+      .addLabel("end");
 
     /** ghibli background fade in and out animation */
     let t2 = gsap.timeline({
@@ -34,7 +64,7 @@ const Home = () => {
         pin: true, // pin the trigger element while active
         pinSpacing: false,
         start: "top top", // when the top of the trigger hits the top of the viewport
-        endTrigger:"#ghibli-spacer",
+        endTrigger: "#ghibli-spacer",
         end: "20% top", // end after scrolling 500px beyond the start
         scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
         snap: {
@@ -50,30 +80,16 @@ const Home = () => {
       .to("#background", { opacity: 1 })
       .addLabel("bgOut")
       .to("#background", { opacity: 0, delay: 1 })
+      .to("#gradientBg", { "--color1": "92,107,192" })
       .addLabel("end");
-    // gsap.to("#about", {
-    //   opacity: 1,
-    //   scrollTrigger: {
-    //     trigger: "#about",
-    //     // markers: true,
-    //     start: "top top",
-    //     end: "+1000px",
-    //     scrub: true,
-    //     pin: "#about",
-    //   },
-    // });
 
     /** stacked project cards animation */
-    // gsap.set(".project-card", { position: "absolute" });
-
-    gsap.to(".project-card", {
-      yPercent: -100,
-      stagger: 0.5,
+    let t3 = gsap.timeline({
       scrollTrigger: {
         trigger: ".project-container",
-        markers: true,
+        // markers: true,
         start: "top 10%",
-        endTrigger: '#project-spacer',
+        endTrigger: "#project-spacer",
         end: "40% top",
         scrub: 0.5,
         pin: "#projectOne",
@@ -81,12 +97,31 @@ const Home = () => {
         anticipatePin: 1,
       },
     });
+
+    t3.addLabel("projCardAnimation")
+      .to(".project-card", {
+        yPercent: -100,
+        stagger: 0.5,
+      })
+      // .addLabel("changeGradient")
+      // .to("#gradientBg", { "--color1": "171,71,188" })
+      .addLabel("end");
+  });
+
+  gsap.to("#gradientBg", {
+    scrollTrigger: {
+      trigger: "#contact-container",
+      start: "top 80%",
+      markers: true,
+      scrub: true,
+    },
+    "--color1": "198,255,0",
   });
 
   return (
     <>
       <div
-        className="h-svh w-svw md:h-screen md:w-screen absolute overflow-hidden top-0 left-0 bg-black -z-10"
+        className="h-svh w-svw md:h-screen md:w-screen absolute overflow-hidden top-0 left-0 bg-black -z-10 transition"
         id="gradientBg"
       >
         <div className="gradient-container h-full w-full">
@@ -111,7 +146,7 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="h-svh md:h-screen bg-white/10 flex flex-col justify-center px-6 md:px-16 lg:px-36 xl:px-60 space-y-16"
+        className="h-[120svh] md:h-screen flex flex-col justify-center overflow-hidden px-6 md:px-16 lg:px-36 xl:px-60 space-y-16"
         id="about"
       >
         <div className="space-y-4">
@@ -125,7 +160,7 @@ const Home = () => {
             education.
           </p>
         </div>
-        <div className="about-cards space-x-6 flex">
+        <div className="about-cards md:space-x-6 flex flex-col md:flex-row">
           <AboutCard
             header="Characteristics"
             paragraph="Very good and short and sweet description of this quality blah blah blah"
@@ -133,6 +168,7 @@ const Home = () => {
             tagTwo="Story"
             iconImg="/smile.svg"
             imgAlt="Smile Icon"
+            id="char"
           />
           <AboutCard
             header="Technical Skills"
@@ -141,6 +177,7 @@ const Home = () => {
             tagTwo="Tech"
             iconImg="/gear.svg"
             imgAlt="Gear Icon"
+            id="tech"
           />
           <AboutCard
             header="Soft Skills"
@@ -149,10 +186,11 @@ const Home = () => {
             tagTwo="People"
             iconImg="/chat.svg"
             imgAlt="Chat Icon"
+            id="soft"
           />
         </div>
       </div>
-      <div className="spacer h-svh md:h-screen" id="about-spacer"></div>
+      <div className="spacer h-[130svh] md:h-screen" id="about-spacer"></div>
       <div
         className="opacity-0 h-svh md:h-screen flex items-center px-6 md:px-16 lg:px-36 xl:px-60 bg-[url('./assets/sgbg_mobile.png')] md:bg-[url('./assets/sgbg_tablet.png')] lg:bg-[url('./assets/sgbg.png')] xl:bg-[url('./assets/sgbg_xl.png')] bg-center bg-cover bg-no-repeat"
         id="background"
@@ -221,7 +259,7 @@ const Home = () => {
               </a>
             </div>
           </div>
-          <div className="w-full lg:w-5/12 project-cards relative h-80 pt-[16rem] md:pt-[18rem] xxl:pt-[32.5rem]">
+          <div className="w-full lg:w-5/12 project-cards relative h-80 pt-[16rem] md:pt-[20rem] xxl:pt-[32.5rem]">
             <div className="relative">
               <ProjectCard
                 header="Background"
@@ -264,10 +302,10 @@ const Home = () => {
       </div>
       <div className="spacer h-[230svh] md:h-[230vh]" id="project-spacer"></div>
       <div
-        className="h-svh md:h-screen bg-white/20 flex items-end pb-28 px-6 md:px-16 lg:px-36 xl:px-60"
+        className="h-svh md:h-screen flex items-end pb-6 px-6 md:px-16 lg:px-36 xl:px-60"
         id="contact"
       >
-        <div className="w-full p-4 md:w-9/12 space-y-4 rounded-xl glass-bg">
+        <div className="w-full p-4 md:w-9/12 space-y-4 rounded-xl glass-bg" id="contact-container">
           <h1 className="text-white font-inter font-bold text-5xl md:text-6xl xl:text-7xl">
             Contact
           </h1>
@@ -287,6 +325,9 @@ const Home = () => {
             />
           </div>
         </div>
+      </div>
+      <div className="flex items-center justify-center">
+        <h3 className="font-inconsolata text-sm pb-6">Made with 🤍 by Kane Chang • 2024</h3>
       </div>
     </>
   );

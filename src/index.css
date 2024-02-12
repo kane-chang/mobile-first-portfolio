@@ -16,7 +16,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --spacing: 2rem;
-  --color1: 255, 160, 0;
+  --color1: 0, 0, 0;
   --circle-size: 80%;
   --blending: hard-light;
   --opacity: 0.6;
