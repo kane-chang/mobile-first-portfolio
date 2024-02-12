@@ -148,7 +148,7 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="h-[120svh] md:h-screen flex flex-col justify-center overflow-hidden px-6 md:px-16 lg:px-36 xl:px-60 space-y-16"
+        className="h-[150svh] md:h-screen flex flex-col justify-center overflow-hidden px-6 md:px-16 lg:px-36 xl:px-60 space-y-16"
         id="about"
       >
         <div className="space-y-4">
@@ -162,10 +162,10 @@ const Home = () => {
             education.
           </p>
         </div>
-        <div className="about-cards md:space-x-6 flex flex-col md:flex-row">
+        <div className="about-cards md:space-x-6 flex flex-col md:flex-row items-center">
           <AboutCard
             header="Characteristics"
-            paragraph="Very good and short and sweet description of this quality blah blah blah"
+            paragraph="Philosophy major turned web developer, with a love for logic and learning"
             tagOne="Personality"
             tagTwo="Story"
             iconImg="/smile.svg"
@@ -174,7 +174,7 @@ const Home = () => {
           />
           <AboutCard
             header="Technical Skills"
-            paragraph="Very good and short and sweet description of this quality blah blah blah"
+            paragraph="HTML5, CSS3, JavaScript, TypeScript, React, Tailwind, Bootstrap 5, jQuery, Node.js, Python"
             tagOne="Hard Skills"
             tagTwo="Tech"
             iconImg="/gear.svg"
@@ -183,7 +183,7 @@ const Home = () => {
           />
           <AboutCard
             header="Soft Skills"
-            paragraph="Very good and short and sweet description of this quality blah blah blah"
+            paragraph="Strong work ethic, proactive self-starter. Open and empathetic communicator"
             tagOne="Soft Skills"
             tagTwo="People"
             iconImg="/chat.svg"
@@ -222,7 +222,7 @@ const Home = () => {
       >
         <div className="w-full flex flex-col lg:flex-row relative project-container">
           <div className="w-full lg:w-7/12 p-4 space-y-4 rounded-xl glass-bg md:pb-8 lg:pb-40 xl:pb-[36rem]">
-            <img className="md:w-2/3" src="/gamesync_logo.png" alt="" />
+            <img className="w-2/3" src="/gamesync_logo.png" alt="" />
             <p className="font-inconsolata md:text-xl xl:text-2xl text-white md:pb-16 xxl:pb-56">
               A <span className="text-accentBlue">streamlined</span> and{" "}
               <span className="text-accentBlue">intuitive</span> scheduler
