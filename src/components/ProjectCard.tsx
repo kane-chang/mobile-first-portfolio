@@ -3,6 +3,7 @@ import React from "react";
 interface ProjectCardProps {
   header: string;
   paragraph?: string;
+  paragraph2?: string;
   image?: string;
   alt?: string;
   list?: boolean;
@@ -11,7 +12,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({
   header,
-  paragraph,
+  paragraph, paragraph2,
   image,
   alt,
   list,
@@ -21,6 +22,7 @@ const ProjectCard = ({
     <div className="flex flex-col bg-black rounded-xl border p-6 h-72 md:h-80 xxl:h-[34.5rem] relative w-full project-card">
       <h2 className="font-inter font-medium text-4xl xl:text-5xl pb-4">{header}</h2>
       {paragraph ? <p className="font-inconsolata xl:text-xl">{paragraph}</p> : null}
+      {paragraph2 ? <p className="font-inconsolata xl:text-xl pt-2">{paragraph2}</p> : null}
       {image ? (
         <img
           className="object-scale-down w-full overflow-hidden"

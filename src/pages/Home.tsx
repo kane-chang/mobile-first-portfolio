@@ -158,14 +158,16 @@ const Home = () => {
           <div className="w-full lg:w-5/12 project-cards relative h-80 pt-[16rem] md:pt-[18rem] xxl:pt-[32.5rem]">
             <div className="relative">
               <ProjectCard
-                header="My Role"
-                paragraph="Sole Engineer"
-                key="role"
+                header="Background"
+                paragraph="The Problem: Scheduling gaming sessions for busy adults is a challenge and no gaming-specific schedulers currently exist. "
+                paragraph2="How can we make gaming with friends as easy as possible?"
+                key="bg"
               />
               <ProjectCard
-                header="Background"
-                paragraph="Sole Engineer"
-                key="bg"
+                header="My Role"
+                paragraph="Front-end Web Developer and Team Lead"
+                paragraph2="Led the implementation of dynamic scheduler, local storage integration and summary page. Collaborated closely with three other web developers."
+                key="role"
               />
               <ProjectCard
                 header="Tech Stack"
@@ -187,7 +189,7 @@ const Home = () => {
               />
               <ProjectCard
                 header="Reflections"
-                paragraph="Sole Engineer"
+                paragraph="While this product is currently at MVP stage, more features such as adding multiple players, improving game search and building a back-end for remote calendar are still being developed!"
                 key="closing"
               />
             </div>
@@ -203,7 +205,7 @@ const Home = () => {
             Contact
           </h1>
           <p className="text-white font-inconsolata md:text-xl xl:text-2xl font-bold">
-            Reach out to me via:
+            Interested in collaborating? Keen to chat about web development? Feel free to reach me via these channels!
           </p>
           <div className="space-y-3 pt-36">
             <ContactButton text="GitHub" url="https://github.com/kane-chang" />
