@@ -63,7 +63,7 @@ const Home = () => {
             paragraph="Very good and short and sweet description of this quality blah blah blah"
             tagOne="Personality"
             tagTwo="Story"
-            iconImg="/src/assets/smile.svg"
+            iconImg="/smile.svg"
             imgAlt="Smile Icon"
           />
           {/* <AboutCard
@@ -71,7 +71,7 @@ const Home = () => {
             paragraph="Very good and short and sweet description of this quality blah blah blah"
             tagOne="Hard Skills"
             tagTwo="Tech"
-            iconImg="/src/assets/gear.svg"
+            iconImg="/gear.svg"
             imgAlt="Gear Icon"
           />
           <AboutCard
@@ -79,7 +79,7 @@ const Home = () => {
             paragraph="Very good and short and sweet description of this quality blah blah blah"
             tagOne="Soft Skills"
             tagTwo="People"
-            iconImg="/src/assets/chat.svg"
+            iconImg="/chat.svg"
             imgAlt="Chat Icon"
           /> */}
         </div>
@@ -114,7 +114,7 @@ const Home = () => {
           <div className="w-full lg:w-7/12 p-4 space-y-4 rounded-xl glass-bg md:pb-8 lg:pb-40 xl:pb-[36rem]">
             <img
               className="md:w-2/3"
-              src="/src/assets/gamesync_logo.png"
+              src="/gamesync_logo.png"
               alt=""
             />
             <p className="font-inconsolata md:text-xl xl:text-2xl text-white md:pb-16 xxl:pb-56">
@@ -182,7 +182,7 @@ const Home = () => {
               />
               <ProjectCard
                 header="Sneak Peek"
-                image="/src/assets/homepage.jpg"
+                image="/homepage.jpg"
                 key="peek"
               />
               <ProjectCard
