@@ -19,7 +19,7 @@ const AboutCard = ({
   imgAlt,
 }: AboutProps) => {
   return (
-    <div className="flex flex-col space-y-36 p-4 glass-bg">
+    <div className="flex flex-col space-y-36 p-4 glass-bg about-card min-w-72 ">
       <div className="about-content space-y-2.5">
         <h2 className="font-inconsolata text-xl xxl:text-2xl font-bold">{header}</h2>
         <p className="font-inconsolata xxl:text-xl">{paragraph}</p>

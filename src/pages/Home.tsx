@@ -10,6 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   useGSAP(() => {
+
+    /**gradient background pinned */
     gsap.to("#gradientBg", {
       scrollTrigger: {
         trigger: "#gradientBg",
@@ -17,21 +19,65 @@ const Home = () => {
         endTrigger: "#contact",
         end: "bottom top",
         pin: ".gradient-container",
-        markers: true,
-      }
-    })
-    gsap.set(".project-card", { position: "absolute" });
+        pinSpacing: false,
+        // markers: true,
+      },
+    });
+
+
+
+
+    /** ghibli background fade in and out animation */
+    let t2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#background",
+        pin: true, // pin the trigger element while active
+        pinSpacing: false,
+        start: "top top", // when the top of the trigger hits the top of the viewport
+        endTrigger:"#ghibli-spacer",
+        end: "20% top", // end after scrolling 500px beyond the start
+        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        snap: {
+          snapTo: "labels", // snap to the closest label in the timeline
+          duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
+          delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
+          ease: "power1.inOut", // the ease of the snap animation ("power3" by default)
+        },
+      },
+    });
+
+    t2.addLabel("bgIn")
+      .to("#background", { opacity: 1 })
+      .addLabel("bgOut")
+      .to("#background", { opacity: 0, delay: 1 })
+      .addLabel("end");
+    // gsap.to("#about", {
+    //   opacity: 1,
+    //   scrollTrigger: {
+    //     trigger: "#about",
+    //     // markers: true,
+    //     start: "top top",
+    //     end: "+1000px",
+    //     scrub: true,
+    //     pin: "#about",
+    //   },
+    // });
+
+    /** stacked project cards animation */
+    // gsap.set(".project-card", { position: "absolute" });
 
     gsap.to(".project-card", {
       yPercent: -100,
       stagger: 0.5,
       scrollTrigger: {
         trigger: ".project-container",
-        // markers: true,
-        start: "top 15%",
-        end: "+1500px",
+        markers: true,
+        start: "top 10%",
+        endTrigger: '#project-spacer',
+        end: "40% top",
         scrub: 0.5,
         pin: "#projectOne",
+        pinSpacing: false,
         anticipatePin: 1,
       },
     });
@@ -65,7 +111,7 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="h-svh md:h-screen bg-white/50 flex flex-col justify-center px-6 md:px-16 lg:px-36 xl:px-60 space-y-16"
+        className="h-svh md:h-screen bg-white/10 flex flex-col justify-center px-6 md:px-16 lg:px-36 xl:px-60 space-y-16"
         id="about"
       >
         <div className="space-y-4">
@@ -79,7 +125,7 @@ const Home = () => {
             education.
           </p>
         </div>
-        <div className="about-cards flex flex-col">
+        <div className="about-cards space-x-6 flex">
           <AboutCard
             header="Characteristics"
             paragraph="Very good and short and sweet description of this quality blah blah blah"
@@ -88,7 +134,7 @@ const Home = () => {
             iconImg="/smile.svg"
             imgAlt="Smile Icon"
           />
-          {/* <AboutCard
+          <AboutCard
             header="Technical Skills"
             paragraph="Very good and short and sweet description of this quality blah blah blah"
             tagOne="Hard Skills"
@@ -103,11 +149,12 @@ const Home = () => {
             tagTwo="People"
             iconImg="/chat.svg"
             imgAlt="Chat Icon"
-          /> */}
+          />
         </div>
       </div>
+      <div className="spacer h-svh md:h-screen" id="about-spacer"></div>
       <div
-        className="h-svh md:h-screen flex items-center px-6 md:px-16 lg:px-36 xl:px-60 bg-[url('./assets/sgbg_mobile.png')] md:bg-[url('./assets/sgbg_tablet.png')] lg:bg-[url('./assets/sgbg.png')] xl:bg-[url('./assets/sgbg_xl.png')] bg-center bg-cover bg-no-repeat"
+        className="opacity-0 h-svh md:h-screen flex items-center px-6 md:px-16 lg:px-36 xl:px-60 bg-[url('./assets/sgbg_mobile.png')] md:bg-[url('./assets/sgbg_tablet.png')] lg:bg-[url('./assets/sgbg.png')] xl:bg-[url('./assets/sgbg_xl.png')] bg-center bg-cover bg-no-repeat"
         id="background"
       >
         <div className="space-y-4">
@@ -128,8 +175,9 @@ const Home = () => {
           </p>
         </div>
       </div>
+      <div className="spacer h-svh md:h-screen" id="ghibli-spacer"></div>
       <div
-        className="h-[130svh] md:h-[110vh] lg:h-[130vh] flex px-6 md:px-16 lg:px-36 xl:px-60 pt-32 lg:pt-48"
+        className="h-svh md:h-screen lg:h-[130vh] flex px-6 md:px-16 lg:px-36 xl:px-60 pt-32 lg:pt-48"
         id="projectOne"
       >
         <div className="w-full flex flex-col lg:flex-row relative project-container">
@@ -214,6 +262,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div className="spacer h-[230svh] md:h-[230vh]" id="project-spacer"></div>
       <div
         className="h-svh md:h-screen bg-white/20 flex items-end pb-28 px-6 md:px-16 lg:px-36 xl:px-60"
         id="contact"
