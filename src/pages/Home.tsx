@@ -106,17 +106,19 @@ const Home = () => {
       // .addLabel("changeGradient")
       // .to("#gradientBg", { "--color1": "171,71,188" })
       .addLabel("end");
+
+      gsap.to("#gradientBg", {
+        scrollTrigger: {
+          trigger: "#contact-container",
+          start: "top 80%",
+          // markers: true,
+          scrub: true,
+        },
+        "--color1": "198,255,0",
+      });
   });
 
-  gsap.to("#gradientBg", {
-    scrollTrigger: {
-      trigger: "#contact-container",
-      start: "top 80%",
-      markers: true,
-      scrub: true,
-    },
-    "--color1": "198,255,0",
-  });
+
 
   return (
     <>
