@@ -9,7 +9,7 @@ const ContactButton = ({ text, url }: ContactButtonProps) => {
   return (
     <div className="flex space-x-1 group">
       <a
-        className="font-inter text-lg border rounded-3xl text-xl px-6 py-1 group-hover:text-accentGreen group-hover:border-accentGreen transition"
+        className="font-inter self-center text-lg border rounded-3xl lg:text-3xl xl:text-4xl px-6 py-1 group-hover:text-accentGreen group-hover:border-accentGreen transition"
         href={url}
         target="_blank"
       >
@@ -21,7 +21,7 @@ const ContactButton = ({ text, url }: ContactButtonProps) => {
         target="_blank"
       >
         <svg
-          className="w-9"
+          className="w-9 md:w-12 xl:w-12"
           viewBox="0 0 84 84"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

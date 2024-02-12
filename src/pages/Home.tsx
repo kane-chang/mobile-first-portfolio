@@ -1,9 +1,32 @@
 import React from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import ContactButton from "../components/ContactButton";
 import ProjectCard from "../components/ProjectCard";
 import AboutCard from "../components/AboutCard";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Home = () => {
+  useGSAP(() => {
+    gsap.set(".project-card", { position: "absolute" });
+
+    gsap.to(".project-card", {
+      yPercent: -100,
+      stagger: 0.5,
+      scrollTrigger: {
+        trigger: ".project-container",
+        markers: true,
+        start: "top 15%",
+        end: "+1500px",
+        scrub: 0.5,
+        pin: "#projectOne",
+        anticipatePin: 1,
+      },
+    });
+  });
+
   return (
     <>
       <div
@@ -20,7 +43,7 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="h-dvh bg-white/50 flex flex-col items-center justify-center px-6 md:px-16 lg:px-36 xl:px-60 space-y-16"
+        className="h-dvh bg-white/50 flex flex-col justify-center px-6 md:px-16 lg:px-36 xl:px-60 space-y-16"
         id="about"
       >
         <div className="space-y-4">
@@ -84,13 +107,17 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="h-dvh bg-white/10 flex items-center px-6 md:px-16 lg:px-36 xl:px-60"
+        className="h-dvh flex px-6 md:px-16 lg:px-36 xl:px-60 pt-32 lg:pt-48"
         id="projectOne"
       >
-        <div className="w-full flex flex-col lg:flex-row relative">
-          <div className="w-full lg:w-8/12 p-4 space-y-4 rounded-xl glass-bg">
-            <img src="/src/assets/gamesync_logo.png" alt="" />
-            <p className="font-inconsolata md:text-xl xl:text-2xl text-white">
+        <div className="w-full flex flex-col lg:flex-row relative project-container">
+          <div className="w-full lg:w-7/12 p-4 space-y-4 rounded-xl glass-bg md:pb-8 lg:pb-40 xl:pb-[36rem]">
+            <img
+              className="md:w-2/3"
+              src="/src/assets/gamesync_logo.png"
+              alt=""
+            />
+            <p className="font-inconsolata md:text-xl xl:text-2xl text-white md:pb-16 xxl:pb-56">
               A <span className="text-accentBlue">streamlined</span> and{" "}
               <span className="text-accentBlue">intuitive</span> scheduler
               tailored for <span className="text-accentBlue">busy gamers</span>,
@@ -99,7 +126,7 @@ const Home = () => {
             </p>
             <div className="flex space-x-1 group">
               <a
-                className="font-inter text-lg border rounded-3xl text-xl px-6 py-1 group-hover:text-accentBlue group-hover:border-accentBlue transition"
+                className="font-inter text-lg self-center border rounded-3xl text-xl md:text-3xl xl:text-5xl px-6 py-1 group-hover:text-accentBlue group-hover:border-accentBlue transition"
                 href="https://gamesync-game-session-scheduler.netlify.app/"
                 target="_blank"
               >
@@ -111,7 +138,7 @@ const Home = () => {
                 target="_blank"
               >
                 <svg
-                  className="w-9"
+                  className="w-9 md:w-12 xl:w-14"
                   viewBox="0 0 84 84"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -128,32 +155,42 @@ const Home = () => {
               </a>
             </div>
           </div>
-          <div className="w-full lg:w-4/12 project-cards relative h-80">
-            <ProjectCard header="My Role" paragraph="Sole Engineer" key="role" />
-            <ProjectCard header="Background" paragraph="Sole Engineer" key="bg" />
-            <ProjectCard
-              header="Tech Stack"
-              list={true}
-              listItems={[
-                "HTML",
-                "CSS",
-                "JavaScript",
-                "React",
-                "Tailwind",
-                "Axios",
-              ]}
-              key="list"
-            />
-            {/* <ProjectCard
-              header="Sneak Peek"
-              image="/src/assets/homepage.jpg"
-              key="peek"
-            /> */}
-            <ProjectCard
-              header="Reflections"
-              paragraph="Sole Engineer"
-              key="closing"
-            />
+          <div className="w-full lg:w-5/12 project-cards relative h-80 pt-[16rem] md:pt-[18rem] xxl:pt-[32.5rem]">
+            <div className="relative">
+              <ProjectCard
+                header="My Role"
+                paragraph="Sole Engineer"
+                key="role"
+              />
+              <ProjectCard
+                header="Background"
+                paragraph="Sole Engineer"
+                key="bg"
+              />
+              <ProjectCard
+                header="Tech Stack"
+                list={true}
+                listItems={[
+                  "HTML",
+                  "CSS",
+                  "JavaScript",
+                  "React",
+                  "Tailwind",
+                  "Axios",
+                ]}
+                key="list"
+              />
+              <ProjectCard
+                header="Sneak Peek"
+                image="/src/assets/homepage.jpg"
+                key="peek"
+              />
+              <ProjectCard
+                header="Reflections"
+                paragraph="Sole Engineer"
+                key="closing"
+              />
+            </div>
           </div>
         </div>
       </div>
