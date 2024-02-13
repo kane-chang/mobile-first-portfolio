@@ -24,12 +24,7 @@
   ## Usage
   
   Thanks for stopping by, feel free to drop me an email for any inquiries!
-  
-  To run tests, run the following command:
-  
-  ```bash
-  NA
-  ```
+
   
   ## Contributing
   
