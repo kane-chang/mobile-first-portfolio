@@ -1,30 +1,44 @@
-# React + TypeScript + Vite
+# Kane Chang Web Dev Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  ![Static Badge](https://img.shields.io/badge/license-MIT-blue)
+  
+  Hi! I'm Kane, a web developer. This is my deployed portfolio page created using a mobile first approach and built with React, Typescript and GSAP.
+  
+  ## Table of Contents
+  1. [Installation](#installation)
+  2. [Usage](#usage)
+  3. [Contributing](#contributing)
+  4. [License](#license)
+  5. [Questions](#questions)
+  
+  ## Installation
+  
+  To install necessary dependencies, run the following command:
+  
+  ```bash
 
-Currently, two official plugins are available:
+  npm i
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+  ```
+  
+  ## Usage
+  
+  Thanks for stopping by, feel free to drop me an email for any inquiries!
+  
+  To run tests, run the following command:
+  
+  ```bash
+  NA
+  ```
+  
+  ## Contributing
+  
+  
+  
+  ## License
+  
+  The license is: [MIT](https://choosealicense.com/licenses/mit/)
+  
+  ## Questions
+  
+  To get in touch, contact me at [kane.chang.fl@gmail.com](kane.chang.fl@gmail.com). You can find my other works at [kane-chang](https://github.com/kane-chang)
