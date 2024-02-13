@@ -23,7 +23,7 @@ const AboutCard = ({
   return (
     <div
       id={id}
-      className="flex flex-col p-4 justify-between glass-bg about-card w-72 h-52 md:h-72 opacity-1 rounded-xl"
+      className="flex flex-col p-4 justify-between glass-bg about-card w-full md:w-72 h-52 md:h-72 opacity-1 rounded-xl"
     >
       <div className="about-content space-y-2.5">
         <h2 className="font-inconsolata text-xl xxl:text-2xl font-bold">
