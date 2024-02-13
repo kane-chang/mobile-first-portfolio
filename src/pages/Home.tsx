@@ -10,7 +10,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   useGSAP(() => {
-    /**gradient background pinned */
+    /**scroll down animation */
+    let downAnimationTl = gsap.timeline();
+
+    downAnimationTl
+      .from("#scrollDownText", {
+        opacity: 0,
+        y: 200,
+        duration: 2,
+        ease: "power2.out",
+      })
+      .from("#scrollDownIcon", {
+        opacity: 0,
+        y: 50,
+        duration: 2,
+        ease: "power1.out",
+      })
+      .to("#scrollDownIcon", { y: 6, yoyo: true, repeat: -1 });
+
     gsap.to("#gradientBg", {
       scrollTrigger: {
         trigger: "#gradientBg",
@@ -23,15 +40,27 @@ const Home = () => {
       },
     });
 
-    gsap.to("#gradientBg", {
+    let t0 = gsap.timeline({
       scrollTrigger: {
         trigger: "#gradientBg",
-        start: "30% top",
-        // markers: true,
+        start: "10% top",
+        markers: true,
         scrub: true,
-      },
-      "--color1": "255,160,0",
-    });
+      }
+    })
+
+    t0.to("#scrollDown", {opacity:0})
+    .to("#gradientBg", {"--color1": "255,160,0"})
+
+    // gsap.to("#gradientBg", {
+    //   scrollTrigger: {
+    //     trigger: "#gradientBg",
+    //     start: "30% top",
+    //     // markers: true,
+    //     scrub: true,
+    //   },
+    //   "--color1": "255,160,0",
+    // });
 
     /** about section animation */
     let t1 = gsap.timeline({
@@ -103,22 +132,18 @@ const Home = () => {
         yPercent: -100,
         stagger: 0.5,
       })
-      // .addLabel("changeGradient")
-      // .to("#gradientBg", { "--color1": "171,71,188" })
       .addLabel("end");
 
-      gsap.to("#gradientBg", {
-        scrollTrigger: {
-          trigger: "#contact-container",
-          start: "top 80%",
-          // markers: true,
-          scrub: true,
-        },
-        "--color1": "198,255,0",
-      });
+    gsap.to("#gradientBg", {
+      scrollTrigger: {
+        trigger: "#contact-container",
+        start: "top 80%",
+        // markers: true,
+        scrub: true,
+      },
+      "--color1": "198,255,0",
+    });
   });
-
-
 
   return (
     <>
@@ -135,7 +160,7 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="h-svh md:h-screen flex items-center px-6 md:px-16 lg:px-36 xl:px-60"
+        className="h-svh md:h-screen flex flex-col justify-end px-6 md:px-16 lg:px-36 xl:px-60"
         id="hero"
       >
         <div className="space-y-4">
@@ -145,6 +170,21 @@ const Home = () => {
           <p className="text-white font-inconsolata md:text-xl xl:text-2xl font-bold">
             Web Developer
           </p>
+        </div>
+        <div
+          className="flex flex-col items-center mt-[35vh] pb-8 xl:pb-10"
+          id="scrollDown"
+        >
+          <p
+            className="font-inconsolata"
+            id="scrollDownText"
+          >
+            Scroll Down
+          </p>
+          <i
+            className="fa-solid fa-chevron-down"
+            id="scrollDownIcon"
+          ></i>
         </div>
       </div>
       <div
@@ -174,7 +214,7 @@ const Home = () => {
           />
           <AboutCard
             header="Technical Skills"
-            paragraph="HTML5, CSS3, JavaScript, TypeScript, React, Tailwind, Bootstrap 5, jQuery, Node.js, Python"
+            paragraph="HTML5, CSS3, JavaScript, TypeScript, React, Tailwind, Bootstrap 5, jQuery, Node.js, Python & more"
             tagOne="Hard Skills"
             tagTwo="Tech"
             iconImg="/gear.svg"
@@ -307,7 +347,10 @@ const Home = () => {
         className="h-svh md:h-screen flex items-end pb-6 px-6 md:px-16 lg:px-36 xl:px-60"
         id="contact"
       >
-        <div className="w-full p-4 md:w-9/12 space-y-4 rounded-xl glass-bg" id="contact-container">
+        <div
+          className="w-full p-4 md:w-9/12 space-y-4 rounded-xl glass-bg"
+          id="contact-container"
+        >
           <h1 className="text-white font-inter font-bold text-5xl md:text-6xl xl:text-7xl">
             Contact
           </h1>
@@ -329,7 +372,9 @@ const Home = () => {
         </div>
       </div>
       <div className="flex items-center justify-center">
-        <h3 className="font-inconsolata text-sm pb-6">Made with 🤍 by Kane Chang • 2024</h3>
+        <h3 className="font-inconsolata text-sm pb-6">
+          Made with 🤍 by Kane Chang • 2024
+        </h3>
       </div>
     </>
   );
