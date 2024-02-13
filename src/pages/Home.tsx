@@ -259,7 +259,7 @@ const Home = () => {
         <h1 className="text-white font-inter font-bold text-4xl md:text-5xl xl:text-6xl pb-8">
           Projects
         </h1>
-        <div className="flex h-fullgit ">
+        <div className="flex h-full">
           <div className="w-full flex flex-col lg:flex-row relative project-container">
             <div className="w-full lg:w-7/12 p-4 space-y-4 rounded-xl glass-bg md:pb-8">
               <img className="w-2/3" src="/gamesync_logo.png" alt="" />
