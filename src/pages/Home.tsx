@@ -2,18 +2,31 @@ import React from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { TextPlugin } from "gsap/all";
 import ContactButton from "../components/ContactButton";
 import ProjectCard from "../components/ProjectCard";
 import AboutCard from "../components/AboutCard";
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
 
 const Home = () => {
   useGSAP(() => {
     /**scroll down animation */
-    let downAnimationTl = gsap.timeline();
+    let startAnimationTl = gsap.timeline();
 
-    downAnimationTl
+    startAnimationTl.fromTo(
+      ".cursor",
+      { opacity: 1 },
+      { opacity: 0, repeat: 7, ease: "power4.inOut", duration: 0.8 }
+    );
+    startAnimationTl
+      .to(".name-header", {
+        text: ".kane-chang",
+        duration: 3,
+        ease: "power3.in",
+      }, 0.5)
+      .from(".subheader", {opacity:0 , x:-50, duration: 2,}, 4.2)
       .from(".scrollDown", {
         opacity: 0,
         y: 200,
@@ -21,7 +34,10 @@ const Home = () => {
         ease: "power2.out",
         stagger: 0.5,
       })
-      .to("#scrollDownIcon", { y: 6, yoyo: true, repeat: -1 });
+      .to("#scrollDownIcon", { y: 6, yoyo: true, repeat: -1 })
+      
+      
+
 
     gsap.to("#gradientBg", {
       scrollTrigger: {
@@ -159,11 +175,12 @@ const Home = () => {
         className="h-svh md:h-screen flex flex-col justify-end px-6 md:px-16 lg:px-36 xl:px-60"
         id="hero"
       >
-        <div className="space-y-4">
-          <h1 className="text-accentOrange font-inter font-bold text-5xl md:text-6xl xl:text-7xl">
-            .kane-chang
+        <div>
+          <h1 className="font-inter text-5xl md:text-6xl xl:text-7xl overflow-hidden whitespace-nowrap h-full">
+            <span className="text-accentOrange name-header font-bold"></span>
+            <span className="cursor text-white font-inter font-thin">|</span>
           </h1>
-          <p className="text-white font-inconsolata md:text-xl xl:text-2xl font-bold">
+          <p className="text-white font-inconsolata md:text-xl xl:text-2xl font-bold subheader">
             Web Developer
           </p>
         </div>
