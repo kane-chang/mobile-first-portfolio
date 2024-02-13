@@ -18,15 +18,15 @@ const Home = () => {
     startAnimationTl.fromTo(
       ".cursor",
       { opacity: 1 },
-      { opacity: 0, repeat: 7, ease: "power4.inOut", duration: 0.8 }
+      { opacity: 0, repeat: 6, ease: "power4.inOut", duration: 0.8 }
     );
     startAnimationTl
       .to(".name-header", {
         text: ".kane-chang",
         duration: 3,
         ease: "power3.in",
-      }, 0.5)
-      .from(".subheader", {opacity:0 , x:-50, duration: 2,}, 4.2)
+      }, 0.2)
+      .from(".subheader", {opacity:0 , x:-50, duration: 2,}, 3.7)
       .from(".scrollDown", {
         opacity: 0,
         y: 200,
