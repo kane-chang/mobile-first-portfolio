@@ -15,7 +15,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --spacing: 2rem;
+  --spacing: 0;
   --color1: 0, 0, 0;
   --circle-size: 80%;
   --blending: hard-light;
@@ -51,24 +51,24 @@
   top: calc(var(--spacing));
 }
 .project-card:nth-child(2) {
-  top: calc(var(--spacing) + 1.5rem);
+  top: 1.5rem
 }
 .project-card:nth-child(3) {
-  top: calc(var(--spacing) + 3rem);
+  top: 3rem
 }
 .project-card:nth-child(4) {
-  top: calc(var(--spacing) + 4.5rem);
+  top: 4.5rem
 }
 .project-card:nth-child(5) {
-  top: calc(var(--spacing) + 6rem);
+  top: 6rem
 }
 
 #gradientBg {
-  background: linear-gradient(40deg,black, black);
+  background: linear-gradient(40deg, black, black);
 }
 
 .gradient-container {
-  filter: url(#goo) blur(40px) ;
+  filter: url(#goo) blur(40px);
 }
 
 .g1 {

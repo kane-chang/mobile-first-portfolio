@@ -10,7 +10,19 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   useGSAP(() => {
-    /**gradient background pinned */
+    /**scroll down animation */
+    let downAnimationTl = gsap.timeline();
+
+    downAnimationTl
+      .from(".scrollDown", {
+        opacity: 0,
+        y: 200,
+        duration: 2,
+        ease: "power2.out",
+        stagger: 0.5,
+      })
+      .to("#scrollDownIcon", { y: 6, yoyo: true, repeat: -1 });
+
     gsap.to("#gradientBg", {
       scrollTrigger: {
         trigger: "#gradientBg",
@@ -23,15 +35,28 @@ const Home = () => {
       },
     });
 
-    gsap.to("#gradientBg", {
+    let t0 = gsap.timeline({
       scrollTrigger: {
         trigger: "#gradientBg",
-        start: "30% top",
+        start: "10% top",
         // markers: true,
         scrub: true,
       },
+    });
+
+    t0.to("#scrollDown", { opacity: 0 }).to("#gradientBg", {
       "--color1": "255,160,0",
     });
+
+    // gsap.to("#gradientBg", {
+    //   scrollTrigger: {
+    //     trigger: "#gradientBg",
+    //     start: "30% top",
+    //     // markers: true,
+    //     scrub: true,
+    //   },
+    //   "--color1": "255,160,0",
+    // });
 
     /** about section animation */
     let t1 = gsap.timeline({
@@ -86,7 +111,7 @@ const Home = () => {
     /** stacked project cards animation */
     let t3 = gsap.timeline({
       scrollTrigger: {
-        trigger: ".project-container",
+        trigger: "#projectOne",
         // markers: true,
         start: "top 10%",
         endTrigger: "#project-spacer",
@@ -99,26 +124,22 @@ const Home = () => {
     });
 
     t3.addLabel("projCardAnimation")
-      .to(".project-card", {
-        yPercent: -100,
+      .from(".project-card", {
+        yPercent: 200,
         stagger: 0.5,
       })
-      // .addLabel("changeGradient")
-      // .to("#gradientBg", { "--color1": "171,71,188" })
       .addLabel("end");
 
-      gsap.to("#gradientBg", {
-        scrollTrigger: {
-          trigger: "#contact-container",
-          start: "top 80%",
-          // markers: true,
-          scrub: true,
-        },
-        "--color1": "198,255,0",
-      });
+    gsap.to("#gradientBg", {
+      scrollTrigger: {
+        trigger: "#contact-container",
+        start: "top 80%",
+        // markers: true,
+        scrub: true,
+      },
+      "--color1": "198,255,0",
+    });
   });
-
-
 
   return (
     <>
@@ -135,7 +156,7 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="h-svh md:h-screen flex items-center px-6 md:px-16 lg:px-36 xl:px-60"
+        className="h-svh md:h-screen flex flex-col justify-end px-6 md:px-16 lg:px-36 xl:px-60"
         id="hero"
       >
         <div className="space-y-4">
@@ -145,6 +166,18 @@ const Home = () => {
           <p className="text-white font-inconsolata md:text-xl xl:text-2xl font-bold">
             Web Developer
           </p>
+        </div>
+        <div
+          className="flex flex-col items-center mt-[35vh] pb-8 xl:pb-10"
+          id="scrollDown"
+        >
+          <p className="font-inconsolata scrollDown" id="scrollDownText">
+            Scroll Down
+          </p>
+          <i
+            className="fa-solid fa-chevron-down scrollDown"
+            id="scrollDownIcon"
+          ></i>
         </div>
       </div>
       <div
@@ -174,7 +207,7 @@ const Home = () => {
           />
           <AboutCard
             header="Technical Skills"
-            paragraph="HTML5, CSS3, JavaScript, TypeScript, React, Tailwind, Bootstrap 5, jQuery, Node.js, Python"
+            paragraph="HTML5, CSS3, JavaScript, TypeScript, React, Tailwind, Bootstrap 5, jQuery, Node.js, Python & more"
             tagOne="Hard Skills"
             tagTwo="Tech"
             iconImg="/gear.svg"
@@ -216,88 +249,97 @@ const Home = () => {
         </div>
       </div>
       <div className="spacer h-svh md:h-screen" id="ghibli-spacer"></div>
+      {/* <div className="flex px-6 lg:px-36 xl:px-60 ">
+          <h1 className="text-white font-inter font-bold text-4xl md:text-5xl xl:text-6xl pb-8">Projects</h1>
+        </div> */}
       <div
-        className="h-svh md:h-screen lg:h-[130vh] flex px-6 md:px-16 lg:px-36 xl:px-60 pt-32 lg:pt-48"
+        className="h-svh md:h-screen flex flex-col px-6 md:px-16 lg:px-36 xl:px-60"
         id="projectOne"
       >
-        <div className="w-full flex flex-col lg:flex-row relative project-container">
-          <div className="w-full lg:w-7/12 p-4 space-y-4 rounded-xl glass-bg md:pb-8 lg:pb-40 xl:pb-[36rem]">
-            <img className="w-2/3" src="/gamesync_logo.png" alt="" />
-            <p className="font-inconsolata md:text-xl xl:text-2xl text-white md:pb-16 xxl:pb-56">
-              A <span className="text-accentBlue">streamlined</span> and{" "}
-              <span className="text-accentBlue">intuitive</span> scheduler
-              tailored for <span className="text-accentBlue">busy gamers</span>,
-              by gamers. Estimate completion dates, share your calendars and
-              conquer levels together effortlessly!
-            </p>
-            <div className="flex space-x-1 group">
-              <a
-                className="font-inter text-lg self-center border rounded-3xl text-xl md:text-3xl xl:text-5xl px-6 py-1 group-hover:text-accentBlue group-hover:border-accentBlue transition"
-                href="https://gamesync-game-session-scheduler.netlify.app/"
-                target="_blank"
-              >
-                View
-              </a>
-              <a
-                className="border rounded-full group group-hover:text-accentBlue group-hover:border-accentBlue group-hover:rotate-45 transition"
-                href="https://gamesync-game-session-scheduler.netlify.app/"
-                target="_blank"
-              >
-                <svg
-                  className="w-9 md:w-12 xl:w-14"
-                  viewBox="0 0 84 84"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+        <h1 className="text-white font-inter font-bold text-4xl md:text-5xl xl:text-6xl pb-8">
+          Projects
+        </h1>
+        <div className="flex h-full">
+          <div className="w-full flex flex-col lg:flex-row relative project-container">
+            <div className="w-full lg:w-7/12 p-4 space-y-4 rounded-xl glass-bg md:pb-8">
+              <img className="w-2/3" src="/gamesync_logo.png" alt="" />
+              <p className="font-inconsolata md:text-xl xl:text-2xl text-white md:pb-16 xxl:pb-56">
+                A <span className="text-accentOrange">streamlined</span> and{" "}
+                <span className="text-accentOrange">intuitive</span> scheduler
+                tailored for{" "}
+                <span className="text-accentOrange">busy gamers</span>, by
+                gamers. Estimate completion dates, share your calendars and
+                conquer levels together!
+              </p>
+              <div className="flex space-x-1 group">
+                <a
+                  className="font-inter text-lg self-center border rounded-3xl text-xl md:text-3xl xl:text-5xl px-6 py-1 group-hover:text-accentOrange group-hover:border-accentOrange transition"
+                  href="https://gamesync-game-session-scheduler.netlify.app/"
+                  target="_blank"
                 >
-                  <g id="ph:arrow-up-thin">
-                    <path
-                      id="Vector"
-                      d="M57.5559 52.9C57.4245 52.9001 57.2943 52.8743 57.1729 52.824C57.0515 52.7737 56.9411 52.7 56.8482 52.6071C56.7553 52.5142 56.6816 52.4039 56.6313 52.2824C56.5811 52.161 56.5553 52.0309 56.5553 51.8995L56.5553 28.8584L27.1503 58.2634C26.9628 58.451 26.7084 58.5563 26.4432 58.5563C26.178 58.5563 25.9236 58.451 25.7361 58.2634C25.5485 58.0759 25.4432 57.8215 25.4432 57.5563C25.4432 57.2911 25.5485 57.0367 25.7361 56.8492L55.1411 27.4442L32.1 27.4442C31.9686 27.4442 31.8385 27.4183 31.7171 27.368C31.5958 27.3177 31.4855 27.244 31.3925 27.1511C31.2996 27.0582 31.2259 26.9479 31.1756 26.8265C31.1254 26.7051 31.0995 26.575 31.0995 26.4436C31.0995 26.3122 31.1254 26.1821 31.1756 26.0607C31.2259 25.9393 31.2996 25.829 31.3925 25.7361C31.4855 25.6432 31.5958 25.5695 31.7171 25.5192C31.8385 25.4689 31.9686 25.4431 32.1 25.4431L57.5559 25.4431C57.6873 25.443 57.8174 25.4688 57.9389 25.5191C58.0603 25.5693 58.1706 25.643 58.2635 25.736C58.3565 25.8289 58.4302 25.9392 58.4804 26.0606C58.5307 26.1821 58.5565 26.3122 58.5564 26.4436L58.5564 51.8995C58.5565 52.0309 58.5307 52.161 58.4804 52.2824C58.4302 52.4039 58.3565 52.5142 58.2635 52.6071C58.1706 52.7 58.0603 52.7737 57.9389 52.824C57.8174 52.8743 57.6873 52.9001 57.5559 52.9Z"
-                      fill="#F8F8F8"
-                      className="group-hover:fill-accentBlue transition"
-                    />
-                  </g>
-                </svg>
-              </a>
+                  View
+                </a>
+                <a
+                  className="border rounded-full group group-hover:text-accentOrange group-hover:border-accentOrange group-hover:rotate-45 transition"
+                  href="https://gamesync-game-session-scheduler.netlify.app/"
+                  target="_blank"
+                >
+                  <svg
+                    className="w-9 md:w-12 xl:w-14"
+                    viewBox="0 0 84 84"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="ph:arrow-up-thin">
+                      <path
+                        id="Vector"
+                        d="M57.5559 52.9C57.4245 52.9001 57.2943 52.8743 57.1729 52.824C57.0515 52.7737 56.9411 52.7 56.8482 52.6071C56.7553 52.5142 56.6816 52.4039 56.6313 52.2824C56.5811 52.161 56.5553 52.0309 56.5553 51.8995L56.5553 28.8584L27.1503 58.2634C26.9628 58.451 26.7084 58.5563 26.4432 58.5563C26.178 58.5563 25.9236 58.451 25.7361 58.2634C25.5485 58.0759 25.4432 57.8215 25.4432 57.5563C25.4432 57.2911 25.5485 57.0367 25.7361 56.8492L55.1411 27.4442L32.1 27.4442C31.9686 27.4442 31.8385 27.4183 31.7171 27.368C31.5958 27.3177 31.4855 27.244 31.3925 27.1511C31.2996 27.0582 31.2259 26.9479 31.1756 26.8265C31.1254 26.7051 31.0995 26.575 31.0995 26.4436C31.0995 26.3122 31.1254 26.1821 31.1756 26.0607C31.2259 25.9393 31.2996 25.829 31.3925 25.7361C31.4855 25.6432 31.5958 25.5695 31.7171 25.5192C31.8385 25.4689 31.9686 25.4431 32.1 25.4431L57.5559 25.4431C57.6873 25.443 57.8174 25.4688 57.9389 25.5191C58.0603 25.5693 58.1706 25.643 58.2635 25.736C58.3565 25.8289 58.4302 25.9392 58.4804 26.0606C58.5307 26.1821 58.5565 26.3122 58.5564 26.4436L58.5564 51.8995C58.5565 52.0309 58.5307 52.161 58.4804 52.2824C58.4302 52.4039 58.3565 52.5142 58.2635 52.6071C58.1706 52.7 58.0603 52.7737 57.9389 52.824C57.8174 52.8743 57.6873 52.9001 57.5559 52.9Z"
+                        fill="#F8F8F8"
+                        className="group-hover:fill-accentOrange transition"
+                      />
+                    </g>
+                  </svg>
+                </a>
+              </div>
             </div>
-          </div>
-          <div className="w-full lg:w-5/12 project-cards relative h-80 pt-[16rem] md:pt-[20rem] xxl:pt-[32.5rem]">
-            <div className="relative">
-              <ProjectCard
-                header="Background"
-                paragraph="The Problem: Scheduling gaming sessions for busy adults is a challenge and no gaming-specific schedulers currently exist. "
-                paragraph2="How can we make gaming with friends as easy as possible?"
-                key="bg"
-              />
-              <ProjectCard
-                header="My Role"
-                paragraph="Front-end Web Developer and Team Lead"
-                paragraph2="Led the implementation of dynamic scheduler, local storage integration and summary page. Collaborated closely with three other web developers."
-                key="role"
-              />
-              <ProjectCard
-                header="Tech Stack"
-                list={true}
-                listItems={[
-                  "HTML",
-                  "CSS",
-                  "JavaScript",
-                  "React",
-                  "Tailwind",
-                  "Axios",
-                ]}
-                key="list"
-              />
-              <ProjectCard
-                header="Sneak Peek"
-                image="/homepage.jpg"
-                key="peek"
-              />
-              <ProjectCard
-                header="Reflections"
-                paragraph="While this product is currently at MVP stage, more features such as adding multiple players, improving game search and building a back-end for remote calendar are still being developed!"
-                key="closing"
-              />
+            <div className="w-full lg:w-5/12 project-cards relative h-80">
+              <div className="relative">
+                <ProjectCard
+                  header="Problem"
+                  paragraph="Scheduling gaming sessions for busy adults is a challenge and no gaming-specific schedulers currently exist. "
+                  paragraph2="How can we make gaming with friends as easy as possible?"
+                  key="bg"
+                />
+                <ProjectCard
+                  header="My Role"
+                  paragraph="Front-end Web Developer and Team Lead"
+                  paragraph2="Led the implementation of dynamic scheduler, local storage integration and summary page. Collaborated closely with three other web developers."
+                  key="role"
+                />
+                <ProjectCard
+                  header="Tech Stack"
+                  list={true}
+                  listItems={[
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "React",
+                    "Tailwind",
+                    "Axios",
+                  ]}
+                  key="list"
+                />
+                <ProjectCard
+                  header="Sneak Peek"
+                  image="/homepage.jpg"
+                  key="peek"
+                />
+                <ProjectCard
+                  header="Reflections"
+                  paragraph="While this product is currently at MVP stage, more features such as adding multiple players, improving game search and building a back-end for remote calendar are still being developed!"
+                  key="closing"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -307,7 +349,10 @@ const Home = () => {
         className="h-svh md:h-screen flex items-end pb-6 px-6 md:px-16 lg:px-36 xl:px-60"
         id="contact"
       >
-        <div className="w-full p-4 md:w-9/12 space-y-4 rounded-xl glass-bg" id="contact-container">
+        <div
+          className="w-full p-4 md:w-9/12 space-y-4 rounded-xl glass-bg"
+          id="contact-container"
+        >
           <h1 className="text-white font-inter font-bold text-5xl md:text-6xl xl:text-7xl">
             Contact
           </h1>
@@ -329,7 +374,9 @@ const Home = () => {
         </div>
       </div>
       <div className="flex items-center justify-center">
-        <h3 className="font-inconsolata text-sm pb-6">Made with 🤍 by Kane Chang • 2024</h3>
+        <h3 className="font-inconsolata text-sm pb-6">
+          Made with 🤍 by Kane Chang • 2024
+        </h3>
       </div>
     </>
   );
