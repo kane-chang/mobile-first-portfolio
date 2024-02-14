@@ -36,9 +36,7 @@ const Home = () => {
       })
       .to("#scrollDownIcon", { y: 6, yoyo: true, repeat: -1 })
       
-      
-
-
+    /** Pins gradientBg throughout homepage */
     gsap.to("#gradientBg", {
       scrollTrigger: {
         trigger: "#gradientBg",
@@ -77,11 +75,12 @@ const Home = () => {
     /** about section animation */
     let t1 = gsap.timeline({
       scrollTrigger: {
-        trigger: "#about",
-        pin: true, // pin the trigger element while active
+        trigger: "#about-header",
+        pin: "#about", // pin the trigger element while active
         pinSpacing: false,
-        start: "top top", // when the top of the trigger hits the top of the viewport
+        start: "top 15%", // when the top of the trigger hits the top of the viewport
         endTrigger: "#about-spacer",
+        markers: true,
         end: "20% top", // end after scrolling 500px beyond the start
         scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
         snap: {
@@ -180,7 +179,7 @@ const Home = () => {
             <span className="text-accentOrange name-header font-bold"></span>
             <span className="cursor text-white font-inter font-thin">|</span>
           </h1>
-          <p className="text-white font-inconsolata md:text-xl xl:text-2xl font-bold subheader">
+          <p className="text-white font-inconsolata text-xl md:text-2xl xl:text-3xl font-bold subheader">
             Web Developer
           </p>
         </div>
@@ -198,21 +197,21 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="h-[150svh] md:h-screen flex flex-col justify-center overflow-hidden px-6 md:px-16 lg:px-36 xl:px-60 space-y-16"
+        className="h-[150svh] md:h-screen flex flex-col justify-center overflow-hidden px-6 md:px-16 lg:px-36 xl:px-60 space-y-8 md:space-y-16"
         id="about"
       >
         <div className="space-y-4">
-          <h1 className="text-accentOrange font-inter font-bold text-5xl md:text-6xl xl:text-7xl">
+          <h1 className="text-accentOrange font-inter font-bold text-5xl md:text-6xl xl:text-7xl" id="about-header">
             This is <span className="text-accentOrange">me.</span>
           </h1>
-          <p className="text-white font-inconsolata md:text-xl xl:text-2xl">
-            I am <span className="text-accentGreen">a Web Developer</span>
-            <br></br>proficient in modern front-end frameworks, with diverse
+          <p className="text-white font-inconsolata text-xl md:text-2xl xl:text-3xl">
+            I am <span className="text-accentGreen">a Web Developer </span>
+            <br className="hidden md:block"></br>proficient in modern front-end frameworks, with diverse
             experience across roles such as communications, non-profit and
             education.
           </p>
         </div>
-        <div className="about-cards md:space-x-6 flex flex-col md:flex-row items-center">
+        <div className="about-cards space-y-2 md:space-x-6 flex flex-col md:flex-row items-center">
           <AboutCard
             header="Characteristics"
             paragraph="Philosophy major turned web developer, with a love for logic and learning"
@@ -225,7 +224,7 @@ const Home = () => {
           <AboutCard
             header="Technical Skills"
             paragraph="HTML5, CSS3, JavaScript, TypeScript, React, Tailwind, Bootstrap 5, jQuery, Node.js, Python & more"
-            tagOne="Hard Skills"
+            tagOne="Hard"
             tagTwo="Tech"
             iconImg="/gear.svg"
             imgAlt="Gear Icon"
@@ -234,7 +233,7 @@ const Home = () => {
           <AboutCard
             header="Soft Skills"
             paragraph="Strong work ethic, proactive self-starter. Open and empathetic communicator"
-            tagOne="Soft Skills"
+            tagOne="Soft"
             tagTwo="People"
             iconImg="/chat.svg"
             imgAlt="Chat Icon"
@@ -285,10 +284,10 @@ const Home = () => {
                 <span className="text-accentOrange">intuitive</span> scheduler
                 tailored for{" "}
                 <span className="text-accentOrange">busy gamers</span>, by
-                gamers. Estimate completion dates, share your calendars and
-                conquer levels together!
+                gamers. <span className="hidden md:inline">Estimate completion dates, share your calendars and
+                conquer levels together!</span>
               </p>
-              <div className="flex space-x-1 group">
+              <div className="flex group">
                 <a
                   className="font-inter text-lg self-center border rounded-3xl text-xl md:text-3xl xl:text-5xl px-6 py-1 group-hover:text-accentOrange group-hover:border-accentOrange transition"
                   href="https://gamesync-game-session-scheduler.netlify.app/"
@@ -373,7 +372,7 @@ const Home = () => {
           <h1 className="text-white font-inter font-bold text-5xl md:text-6xl xl:text-7xl">
             Contact
           </h1>
-          <p className="text-white font-inconsolata md:text-xl xl:text-2xl font-bold">
+          <p className="text-white font-inconsolata text-xl md:text-2xl xl:text-3xl font-bold">
             Interested in collaborating? Keen to chat about web development?
             Feel free to reach me via these channels!
           </p>
