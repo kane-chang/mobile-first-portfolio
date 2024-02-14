@@ -68,10 +68,9 @@ const About = () => {
               Web developer heavily influenced by storytelling and philosophy.
               Addicted to traveling, visual arts, and nerdy games.{" "}
               <br className="md:hidden"></br>
-              <br className="md:hidden"></br>I see myself as a craftsperson of
-              the internet, creating stunning yet fleeting constructions in the
-              vast space of the World Wide Web, lasting potentially for
-              eternity.
+              <br className="md:hidden"></br>I see myself as a craftsperson in the vast space of
+              the internet, creating stunning constructions lasting potentially for
+              an eternity or an instant.
             </p>
             <br></br>
             <p className="font-inconsolata md:text-xl xl:text-2xl">
