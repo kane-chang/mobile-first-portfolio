@@ -220,6 +220,7 @@ const Home = () => {
             iconImg="/smile.svg"
             imgAlt="Smile Icon"
             id="char"
+            hFull={true}
           />
           <AboutCard
             header="Technical Skills"
@@ -229,6 +230,7 @@ const Home = () => {
             iconImg="/gear.svg"
             imgAlt="Gear Icon"
             id="tech"
+            hFull={true}
           />
           <AboutCard
             header="Soft Skills"
@@ -238,6 +240,7 @@ const Home = () => {
             iconImg="/chat.svg"
             imgAlt="Chat Icon"
             id="soft"
+            hFull={true}
           />
         </div>
       </div>
