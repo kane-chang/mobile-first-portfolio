@@ -11,6 +11,7 @@ interface AboutProps {
   iconImg: string;
   imgAlt: string;
   id: string;
+  hFull: boolean;
 }
 
 const AboutCard = ({
@@ -23,24 +24,33 @@ const AboutCard = ({
   iconImg,
   imgAlt,
   id,
+  hFull,
 }: AboutProps) => {
   return (
     <div
       id={id}
-      className="flex flex-col p-4 justify-between glass-bg about-card w-full md:w-72 min-h-52 md:max-h-72 opacity-1 rounded-xl"
+      className={
+        hFull
+          ? "flex flex-col p-4 justify-between glass-bg about-card w-full h-full opacity-1 rounded-xl"
+          : "flex flex-col p-4 justify-between glass-bg about-card w-full opacity-1 rounded-xl"
+      }
     >
       <div className="about-content space-y-2.5">
         <h2 className="font-inconsolata text-xl xxl:text-2xl font-bold">
           {header}
         </h2>
-        {paragraph ? <p className="font-inconsolata text-sm xxl:text-xl">{paragraph}</p> : null}
+        {paragraph ? (
+          <p className="font-inconsolata text-sm xxl:text-xl">{paragraph}</p>
+        ) : null}
         {list ? (
-        <ul role="list" className="list-disc list-inside  ">
-          {listItems?.map((item) => (
-            <li className="font-inconsolata text-sm xxl:text-xl" key={item}>{item}</li>
-          ))}
-        </ul>
-      ) : null}
+          <ul role="list" className="list-disc list-inside  ">
+            {listItems?.map((item) => (
+              <li className="font-inconsolata text-sm xxl:text-xl" key={item}>
+                {item}
+              </li>
+            ))}
+          </ul>
+        ) : null}
       </div>
       <div className="about-tags  flex space-x-2 pt-4">
         <div className="border rounded-3xl font-inter text-xs lg:text-sm xxl:text-xl self-center px-2">

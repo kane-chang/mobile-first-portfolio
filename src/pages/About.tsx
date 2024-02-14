@@ -64,13 +64,13 @@ const About = () => {
             </p>
           </div>
           <div id="kane-info" className="md:w-3/4">
-            <p className="font-inconsolata md:text-xl xl:text-2xl">
+            <p className="font-inconsolata md:text-xl xxl:text-2xl">
               Web developer heavily influenced by storytelling and philosophy.
               Addicted to traveling, visual arts, and nerdy games.{" "}
               <br className="md:hidden"></br>
-              <br className="md:hidden"></br>I see myself as a craftsperson in the vast space of
-              the internet, creating stunning constructions lasting potentially for
-              an eternity or an instant.
+              <br className="md:hidden"></br>I see myself as a craftsperson in
+              the vast space of the internet, creating stunning constructions
+              lasting potentially for an eternity or an instant.
             </p>
             <br></br>
             <p className="font-inconsolata md:text-xl xl:text-2xl">
@@ -89,11 +89,12 @@ const About = () => {
                   "Node.js & Axios",
                   "...& more!",
                 ]}
-                tagOne="Hard Skills"
+                tagOne="Hard"
                 tagTwo="Tech"
                 iconImg="/gear.svg"
                 imgAlt="Gear Icon"
                 id="serious"
+                hFull={false}
               />
               <AboutCard
                 header="The human side"
@@ -104,11 +105,12 @@ const About = () => {
                   "Honest communication => Great teams",
                   "Talk to me about work, but also about your life",
                 ]}
-                tagOne="Soft Skills"
+                tagOne="Soft"
                 tagTwo="People"
                 iconImg="/chat.svg"
                 imgAlt="Chat Icon"
                 id="human"
+                hFull={false}
               />
               <AboutCard
                 header="When not coding..."
@@ -124,6 +126,7 @@ const About = () => {
                 iconImg="/smile.svg"
                 imgAlt="Smile Icon"
                 id="soft"
+                hFull={false}
               />
             </div>
             <div id="endBg" className=""></div>
@@ -146,6 +149,7 @@ const About = () => {
             iconImg="/gear.svg"
             imgAlt="Gear Icon"
             id="serious"
+            hFull={true}
           />
           <AboutCard
             header="The human side"
@@ -161,6 +165,7 @@ const About = () => {
             iconImg="/chat.svg"
             imgAlt="Chat Icon"
             id="human"
+            hFull={true}
           />
           <AboutCard
             header="When not coding..."
@@ -176,6 +181,7 @@ const About = () => {
             iconImg="/smile.svg"
             imgAlt="Smile Icon"
             id="soft"
+            hFull={true}
           />
         </div>
       </div>
