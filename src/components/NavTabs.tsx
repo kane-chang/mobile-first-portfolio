@@ -14,7 +14,7 @@ const NavTabs = () => {
   return (
     <>
       <nav
-        className="fixed py-5 px-5 md:px-16 lg:px-36 xl:px-60 w-full flex justify-between text-xl z-20"
+        className="fixed py-5 px-5 md:px-16 lg:px-36 xl:px-60 w-full flex justify-between text-xl font-bold z-20"
         id="navbar"
       >
         <div className="flex space-x-5">

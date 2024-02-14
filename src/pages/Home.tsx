@@ -224,7 +224,7 @@ const Home = () => {
           <AboutCard
             header="Technical Skills"
             paragraph="HTML5, CSS3, JavaScript, TypeScript, React, Tailwind, Bootstrap 5, jQuery, Node.js, Python & more"
-            tagOne="Hard Skills"
+            tagOne="Hard"
             tagTwo="Tech"
             iconImg="/gear.svg"
             imgAlt="Gear Icon"
@@ -233,7 +233,7 @@ const Home = () => {
           <AboutCard
             header="Soft Skills"
             paragraph="Strong work ethic, proactive self-starter. Open and empathetic communicator"
-            tagOne="Soft Skills"
+            tagOne="Soft"
             tagTwo="People"
             iconImg="/chat.svg"
             imgAlt="Chat Icon"
@@ -287,7 +287,7 @@ const Home = () => {
                 gamers. <span className="hidden md:inline">Estimate completion dates, share your calendars and
                 conquer levels together!</span>
               </p>
-              <div className="flex space-x-1 group">
+              <div className="flex group">
                 <a
                   className="font-inter text-lg self-center border rounded-3xl text-xl md:text-3xl xl:text-5xl px-6 py-1 group-hover:text-accentOrange group-hover:border-accentOrange transition"
                   href="https://gamesync-game-session-scheduler.netlify.app/"

@@ -46,22 +46,24 @@ const About = () => {
         </div>
       </div>
       <div
-        className="h-svh md:h-screen flex flex-col pt-36 px-6 md:px-16 lg:px-36 xl:px-60"
+        className="h-svh md:h-screen flex flex-col pt-20 xxl:pt-36 px-6 md:px-16 lg:px-36 xl:px-60"
         id="hero"
       >
-        <h1 className="font-inter font-bold text-4xl md:text-5xl xl:text-6xl pb-6">
+        <h1 className="font-inter font-bold text-4xl md:text-5xl xl:text-6xl pb-6 lg:pb-8">
           about&#40;<span className="text-accentGreen">kane</span>&#41;
         </h1>
         <div className="flex flex-col space-y-6 md:space-y-0 md:space-x-6 md:flex-row">
           <div id="kane-photo" className="">
             <img
-              className="w-full pb-2 rounded-xl object-contain"
+              className="pb-2 object-contain max-h-[50svh] rounded-xl"
               src="/kane_photo.jpg"
               alt="photo of kane standing in front of a river and bridge"
             />
-            <p className="font-inconsolata text-md md:text-lg xl:text-xl">they/them</p>
+            <p className="font-inconsolata text-md md:text-lg xl:text-xl">
+              they/them
+            </p>
           </div>
-          <div id="kane-info" className="w-3/4">
+          <div id="kane-info" className="md:w-3/4">
             <p className="font-inconsolata md:text-xl xl:text-2xl">
               Web developer heavily influenced by storytelling and philosophy.
               Addicted to traveling, visual arts, and nerdy games.{" "}
@@ -76,7 +78,7 @@ const About = () => {
               From Singapore, based in London.
             </p>
             <br></br>
-            <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6 pb-36 aboutPageCards">
+            <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-4 pb-16 aboutPageCards md:hidden xl:flex">
               <AboutCard
                 header="Serious stuff"
                 list={true}
@@ -110,13 +112,12 @@ const About = () => {
                 id="human"
               />
               <AboutCard
-                header="When I'm not coding..."
+                header="When not coding..."
                 list={true}
                 listItems={[
                   "I eat hotpot ",
-                  "I learn about backend development",
+                  "I read about backend development",
                   "I play tabletop games with friends",
-                  "I play basketball even with dry eyes",
                   "I travel and see the world through my lens",
                 ]}
                 tagOne="Interests"
@@ -128,6 +129,55 @@ const About = () => {
             </div>
             <div id="endBg" className=""></div>
           </div>
+        </div>
+        <div className="md:flex-row space-y-6 md:space-y-0 md:space-x-4 pb-16 aboutPageCards pt-6 hidden md:flex xl:hidden">
+          <AboutCard
+            header="Serious stuff"
+            list={true}
+            listItems={[
+              "HTML & CSS",
+              "JavaScript / Typescript",
+              "React / Angular",
+              "Tailwind / Bootstrap",
+              "Node.js & Axios",
+              "...& more!",
+            ]}
+            tagOne="Hard"
+            tagTwo="Tech"
+            iconImg="/gear.svg"
+            imgAlt="Gear Icon"
+            id="serious"
+          />
+          <AboutCard
+            header="The human side"
+            list={true}
+            listItems={[
+              "Feedback = Growth",
+              "Not a mindless coder",
+              "Honest communication => Great teams",
+              "Talk to me about work, but also about your life",
+            ]}
+            tagOne="Soft"
+            tagTwo="People"
+            iconImg="/chat.svg"
+            imgAlt="Chat Icon"
+            id="human"
+          />
+          <AboutCard
+            header="When not coding..."
+            list={true}
+            listItems={[
+              "I eat hotpot ",
+              "I read about backend development",
+              "I play tabletop games with friends",
+              "I travel and see the world through my lens",
+            ]}
+            tagOne="Interests"
+            tagTwo="Fun!"
+            iconImg="/smile.svg"
+            imgAlt="Smile Icon"
+            id="soft"
+          />
         </div>
       </div>
     </>

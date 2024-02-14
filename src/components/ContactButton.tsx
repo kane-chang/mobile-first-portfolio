@@ -7,7 +7,7 @@ interface ContactButtonProps {
 
 const ContactButton = ({ text, url }: ContactButtonProps) => {
   return (
-    <div className="flex space-x-1 group">
+    <div className="flex group">
       <a
         className="font-inter self-center text-lg border rounded-3xl lg:text-3xl xl:text-4xl px-6 py-1 group-hover:text-accentGreen group-hover:border-accentGreen transition"
         href={url}
