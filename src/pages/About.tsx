@@ -27,7 +27,7 @@ const About = () => {
         end: "bottom top",
         pin: ".gradient-container",
         pinSpacing: false,
-        markers: true,
+        // markers: true,
       },
     });
   });
