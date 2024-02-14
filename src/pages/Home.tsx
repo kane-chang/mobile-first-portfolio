@@ -36,9 +36,7 @@ const Home = () => {
       })
       .to("#scrollDownIcon", { y: 6, yoyo: true, repeat: -1 })
       
-      
-
-
+    /** Pins gradientBg throughout homepage */
     gsap.to("#gradientBg", {
       scrollTrigger: {
         trigger: "#gradientBg",

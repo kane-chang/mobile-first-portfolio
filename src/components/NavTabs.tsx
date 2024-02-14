@@ -29,13 +29,13 @@ const NavTabs = () => {
           >
             .kane-chang
           </NavLink>
-          <a
+          {/* <a
             className="hidden md:flex text-accentOrange hover:text-accentOrange/70 transition"
-            href="https://drive.google.com/file/d/1tC2l8JGctKf1myJKMnhQVQFyUexpRQZn/view"
-            target="_blank"
+            href="#contact"
+            
           >
-            .cv
-          </a>
+            .contact
+          </a> */}
         </div>
         <div className="">
           <button className="md:hidden navbar-toggler" onClick={toggleMenu}>
@@ -78,13 +78,13 @@ const NavTabs = () => {
           </button>
         </div>
         <div className="flex flex-col space-y-5 pl-12 mt-12">
-          <a
+          {/* <a
             className="text-accentOrange hover:text-accentOrange/70 transition"
             href="https://drive.google.com/file/d/1tC2l8JGctKf1myJKMnhQVQFyUexpRQZn/view"
             target="_blank"
           >
             .cv
-          </a>
+          </a> */}
           <NavLink
             to="about"
             className={({ isActive }) =>
