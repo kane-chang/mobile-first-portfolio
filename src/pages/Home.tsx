@@ -80,7 +80,7 @@ const Home = () => {
         pinSpacing: false,
         start: "top 15%", // when the top of the trigger hits the top of the viewport
         endTrigger: "#about-spacer",
-        markers: true,
+        // markers: true,
         end: "20% top", // end after scrolling 500px beyond the start
         scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
         snap: {
