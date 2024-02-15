@@ -212,7 +212,7 @@ const Home = () => {
             This is <span className="text-accentOrange">me.</span>
           </h1>
           <p className="text-white font-inconsolata text-xl md:text-2xl xl:text-3xl">
-            I am <span className="text-accentGreen">a Web Developer </span>
+            I am a<span className="text-accentGreen"> Web Developer </span>
             <br className="hidden md:block"></br>proficient in modern front-end
             frameworks, with diverse experience across roles such as
             communications, non-profit and education.
