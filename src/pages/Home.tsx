@@ -21,12 +21,16 @@ const Home = () => {
       { opacity: 0, repeat: 6, ease: "power4.inOut", duration: 0.8 }
     );
     startAnimationTl
-      .to(".name-header", {
-        text: ".kane-chang",
-        duration: 3,
-        ease: "power3.in",
-      }, 0.2)
-      .from(".subheader", {opacity:0 , x:-50, duration: 2,}, 3.7)
+      .to(
+        ".name-header",
+        {
+          text: ".kane-chang",
+          duration: 3,
+          ease: "power3.in",
+        },
+        0.2
+      )
+      .from(".subheader", { opacity: 0, x: -50, duration: 2 }, 3.7)
       .from(".scrollDown", {
         opacity: 0,
         y: 200,
@@ -34,8 +38,8 @@ const Home = () => {
         ease: "power2.out",
         stagger: 0.5,
       })
-      .to("#scrollDownIcon", { y: 6, yoyo: true, repeat: -1 })
-      
+      .to("#scrollDownIcon", { y: 6, yoyo: true, repeat: -1 });
+
     /** Pins gradientBg throughout homepage */
     gsap.to("#gradientBg", {
       scrollTrigger: {
@@ -201,14 +205,17 @@ const Home = () => {
         id="about"
       >
         <div className="space-y-4">
-          <h1 className="text-accentOrange font-inter font-bold text-5xl md:text-6xl xl:text-7xl" id="about-header">
+          <h1
+            className="text-accentOrange font-inter font-bold text-5xl md:text-6xl xl:text-7xl"
+            id="about-header"
+          >
             This is <span className="text-accentOrange">me.</span>
           </h1>
           <p className="text-white font-inconsolata text-xl md:text-2xl xl:text-3xl">
             I am <span className="text-accentGreen">a Web Developer </span>
-            <br className="hidden md:block"></br>proficient in modern front-end frameworks, with diverse
-            experience across roles such as communications, non-profit and
-            education.
+            <br className="hidden md:block"></br>proficient in modern front-end
+            frameworks, with diverse experience across roles such as
+            communications, non-profit and education.
           </p>
         </div>
         <div className="about-cards space-y-2 md:space-x-6 flex flex-col md:flex-row items-center">
@@ -287,8 +294,11 @@ const Home = () => {
                 <span className="text-accentOrange">intuitive</span> scheduler
                 tailored for{" "}
                 <span className="text-accentOrange">busy gamers</span>, by
-                gamers. <span className="hidden md:inline">Estimate completion dates, share your calendars and
-                conquer levels together!</span>
+                gamers.{" "}
+                <span className="hidden md:inline">
+                  Estimate completion dates, share your calendars and conquer
+                  levels together!
+                </span>
               </p>
               <div className="flex group">
                 <a
@@ -380,14 +390,11 @@ const Home = () => {
             Feel free to reach me via these channels!
           </p>
           <div className="space-y-3 pt-36">
+            <ContactButton text="Email" url="mailto:kane.chang.fl@gmail.com" />
             <ContactButton text="GitHub" url="https://github.com/kane-chang" />
             <ContactButton
               text="LinkedIn"
               url="https://www.linkedin.com/in/kane-chang/"
-            />
-            <ContactButton
-              text="kane.chang.fl@gmail.com"
-              url="mailto:kane.chang.fl@gmail.com"
             />
           </div>
         </div>
