@@ -86,6 +86,17 @@ const NavTabs = () => {
             .cv
           </a> */}
           <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              isActive
+                ? "text-white active "
+                : "text-accentOrange hover:text-accentOrange/70 transition"
+            }
+          >
+            home
+          </NavLink>
+          <NavLink
             to="about"
             className={({ isActive }) =>
               isActive

@@ -47,7 +47,7 @@ const About = () => {
       </div>
       <div
         className="h-svh md:h-screen flex flex-col pt-20 xxl:pt-36 px-6 md:px-16 lg:px-36 xl:px-60"
-        id="hero"
+        id="aboutKane"
       >
         <h1 className="font-inter font-bold text-4xl md:text-5xl xl:text-6xl pb-6 lg:pb-8">
           about&#40;<span className="text-accentGreen">kane</span>&#41;
