@@ -33,7 +33,7 @@
   *Error page*
   ![error page](https://github.com/kane-chang/mobile-first-portfolio/assets/141442532/8f39973d-717b-4b2f-8cf1-e0447480273e)
   
-  As my portfolio uses GSAP animations, do open [my website](https://kanechang.com) to fully experience the portfolio!  
+  As my portfolio uses GSAP animations, do open [my website](https://kanechang.com) for the full experience!  
   Thanks for stopping by, feel free to drop me an email or message for any inquiries.
 
   ## License
