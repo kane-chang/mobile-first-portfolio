@@ -386,8 +386,7 @@ const Home = () => {
             Contact
           </h1>
           <p className="text-white font-inconsolata text-xl md:text-2xl xl:text-3xl font-bold">
-            Interested in collaborating? Keen to chat about web development?
-            Feel free to reach me via these channels!
+            Interested? Feel free to reach me via these channels!
           </p>
           <div className="space-y-3 pt-36">
             <ContactButton text="Email" url="mailto:kane.chang.fl@gmail.com" />

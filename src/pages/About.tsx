@@ -76,6 +76,8 @@ const About = () => {
             <p className="font-inconsolata md:text-xl xl:text-2xl">
               From Singapore, based in London.
             </p>
+            <p className="font-inconsolata text-sm xl:text-xl">You can view my cv <a className="text-accentGreen hover:text-accentGreen/70 transition" href="https://drive.google.com/file/d/1tC2l8JGctKf1myJKMnhQVQFyUexpRQZn/view"
+            target="_blank">here</a>.</p>
             <br></br>
             <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-4 pb-16 aboutPageCards md:hidden xl:flex">
               <AboutCard
