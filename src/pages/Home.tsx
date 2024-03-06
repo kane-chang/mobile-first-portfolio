@@ -184,7 +184,7 @@ const Home = () => {
             <span className="cursor text-white font-inter font-thin">|</span>
           </h1>
           <p className="text-white font-inconsolata text-xl md:text-2xl xl:text-3xl font-bold subheader">
-            Web Developer
+            Frontend Developer
           </p>
         </div>
         <div
@@ -212,9 +212,9 @@ const Home = () => {
             This is <span className="text-accentOrange">me.</span>
           </h1>
           <p className="text-white font-inconsolata text-xl md:text-2xl xl:text-3xl">
-            I am a<span className="text-accentGreen"> Web Developer </span>
-            <br className="hidden md:block"></br>proficient in modern front-end
-            frameworks, with diverse experience across roles such as
+            I am a <span className="text-accentGreen">Frontend Developer </span>
+            <br className="hidden md:block"></br>proficient in modern frontend
+            frameworks such as <span className="text-accentGreen">React</span> and <span className="text-accentGreen">TypeScript</span>, with diverse experience across roles such as
             communications, non-profit and education.
           </p>
         </div>

@@ -65,7 +65,7 @@ const About = () => {
           </div>
           <div id="kane-info" className="md:w-3/4">
             <p className="font-inconsolata md:text-xl xxl:text-2xl">
-              Web developer heavily influenced by storytelling and philosophy.
+              Frontend developer heavily influenced by storytelling and philosophy.
               Addicted to traveling, visual arts, and nerdy games.{" "}
               <br className="md:hidden"></br>
               <br className="md:hidden"></br>I see myself as a craftsperson in
