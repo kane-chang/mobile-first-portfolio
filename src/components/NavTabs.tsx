@@ -42,7 +42,14 @@ const NavTabs = () => {
             <i className="fa-solid fa-bars text-accentOrange hover:text-accentOrange/70 transition"></i>
           </button>
         </div>
-        <div className="hidden md:flex space-x-5">
+        <div className="hidden md:flex space-x-5 text-xl">
+        <a
+            className="text-accentOrange hover:text-accentOrange/70 transition"
+            href="https://drive.google.com/file/d/1tC2l8JGctKf1myJKMnhQVQFyUexpRQZn/view"
+            target="_blank"
+          >
+            cv()
+          </a>
           <NavLink
             to="about"
             className={({ isActive }) =>
@@ -78,13 +85,6 @@ const NavTabs = () => {
           </button>
         </div>
         <div className="flex flex-col space-y-5 pl-12 mt-12">
-          {/* <a
-            className="text-accentOrange hover:text-accentOrange/70 transition"
-            href="https://drive.google.com/file/d/1tC2l8JGctKf1myJKMnhQVQFyUexpRQZn/view"
-            target="_blank"
-          >
-            .cv
-          </a> */}
           <NavLink
             to="/"
             end
@@ -96,6 +96,13 @@ const NavTabs = () => {
           >
             home
           </NavLink>
+          <a
+            className="text-accentOrange hover:text-accentOrange/70 transition"
+            href="https://drive.google.com/file/d/1tC2l8JGctKf1myJKMnhQVQFyUexpRQZn/view"
+            target="_blank"
+          >
+            cv()
+          </a>
           <NavLink
             to="about"
             className={({ isActive }) =>
