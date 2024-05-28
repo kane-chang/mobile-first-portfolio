@@ -159,6 +159,40 @@ const Home = () => {
       })
       .addLabel("end");
 
+    
+      gsap.to("#gradientBg", {
+        scrollTrigger: {
+          trigger: "#projectTwo",
+          start: "top 80%",
+          // markers: true,
+          scrub: true,
+        },
+        "--color1": "198,255,0",
+      });
+  
+  
+      /** stacked project cards animation */
+      let t4 = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#projectTwo",
+          // markers: true,
+          start: "top 10%",
+          endTrigger: "#project-spacer-two",
+          end: "40% top",
+          scrub: 0.5,
+          pin: "#projectTwo",
+          pinSpacing: false,
+          anticipatePin: 1,
+        },
+      });
+  
+      t4.addLabel("projCardAnimationTwo")
+        .from(".project-card-two", {
+          yPercent: 200,
+          stagger: 0.5,
+        })
+        .addLabel("end");
+
     gsap.to("#gradientBg", {
       scrollTrigger: {
         trigger: "#contact-container",
@@ -166,7 +200,7 @@ const Home = () => {
         // markers: true,
         scrub: true,
       },
-      "--color1": "198,255,0",
+      "--color1": "255,160,0",
     });
   });
 
@@ -410,30 +444,68 @@ const Home = () => {
       >
         <div className="flex h-full">
           <div className="w-full flex flex-col lg:flex-row relative project-container">
+            
+            <div className="w-full lg:w-5/12 project-cards relative h-80">
+              <div className="relative">
+                <ProjectCard
+                  header="Problem"
+                  cardClass= "project-card-two"
+                  paragraph="Grocery runs are time-consuming and frustrating, especially for just an item or two. "
+                  paragraph2="How can we save time on troublesome grocery shopping while building our local community?"
+                  key="bg"
+                />
+                <ProjectCard
+                  header="My Role"
+                  cardClass= "project-card-two"
+                  paragraph="Fullstack Mobile Developer"
+                  paragraph2="Developed mobile application from end-to-end, collaborating closely with UX Designer to bring pixel-perfect user interfaces to life"
+                  key="role"
+                />
+                <ProjectCard
+                  header="Tech Stack"
+                  cardClass= "project-card-two"
+                  list={true}
+                  listItems={[
+                    "React Native", "TypeScript", "Supabase", "PostgreSQL", "RESTful API", "IOS", "Android"
+                  ]}
+                  key="list"
+                />
+                {/* <ProjectCard
+                  header="Sneak Peek"
+                  cardClass= "project-card-two"
+                  image="/homepage.jpg"
+                  key="peek"
+                /> */}
+                <ProjectCard
+                  header="Reflections"
+                  cardClass= "project-card-two"
+                  paragraph="I am proud to have built ButterPal as a way for me to refine my skills in React Native and expand my tech stack"
+                  paragraph2="It is currently in testing phase and will soon be launched"
+                  key="closing"
+                />
+              </div>
+            </div>
             <div className="w-full lg:w-7/12 p-4 space-y-4 rounded-xl glass-bg md:pb-8">
-              <img className="w-2/3" src="/gamesync_logo.png" alt="" />
-              <p className="font-inconsolata md:text-xl xl:text-2xl text-white md:pb-16 xxl:pb-56">
-                A <span className="text-accentOrange">streamlined</span> and{" "}
-                <span className="text-accentOrange">intuitive</span> scheduler
-                tailored for{" "}
-                <span className="text-accentOrange">busy gamers</span>, by
-                gamers.{" "}
-                <span className="hidden md:inline">
-                  Estimate completion dates, share your calendars and conquer
-                  levels together!
-                </span>
+              <h2 className="font-inter font-bold text-4xl md:text-5xl xl:text-6xl">ButterPal</h2>
+              <p className="font-inconsolata md:text-xl xl:text-2xl text-white">
+                An <span className="text-accentOrange">innovative</span>, high-performance mobile app built to <span className="text-accentOrange">connect neighbours</span> and <span className="text-accentOrange">crowdsource</span> local grocery runs for IOS and Android.
               </p>
+              <img
+                className="object-scale-down max-w-full max-h-[40%] rounded-2xl pt-2 bt-2"
+                src="/homepage.jpg"
+                alt="GameSync Landing Page"
+               />  
               <div className="flex group">
                 <a
                   className="font-inter text-lg self-center border rounded-3xl text-xl md:text-3xl xl:text-4xl px-6 py-1 group-hover:text-accentOrange group-hover:border-accentOrange transition"
-                  href="https://gamesync-game-session-scheduler.netlify.app/"
+                  href="https://github.com/kane-chang/ButterPal"
                   target="_blank"
                 >
                   View
                 </a>
                 <a
                   className="border rounded-full group group-hover:text-accentOrange group-hover:border-accentOrange group-hover:rotate-45 transition"
-                  href="https://gamesync-game-session-scheduler.netlify.app/"
+                  href="https://github.com/kane-chang/ButterPal"
                   target="_blank"
                 >
                   <svg
@@ -454,55 +526,11 @@ const Home = () => {
                 </a>
               </div>
             </div>
-            <div className="w-full lg:w-5/12 project-cards relative h-80">
-              <div className="relative">
-                <ProjectCard
-                  header="Problem"
-                  cardClass= "project-card-two"
-                  paragraph="Scheduling gaming sessions for busy adults is a challenge and no gaming-specific schedulers currently exist. "
-                  paragraph2="How can we make gaming with friends as easy as possible?"
-                  key="bg"
-                />
-                <ProjectCard
-                  header="My Role"
-                  cardClass= "project-card-two"
-                  paragraph="Front-end Web Developer and Team Lead"
-                  paragraph2="Led the implementation of dynamic scheduler, local storage integration and summary page. Collaborated closely with three other web developers."
-                  key="role"
-                />
-                <ProjectCard
-                  header="Tech Stack"
-                  cardClass= "project-card-two"
-                  list={true}
-                  listItems={[
-                    "HTML",
-                    "CSS",
-                    "JavaScript",
-                    "React",
-                    "Tailwind",
-                    "Axios",
-                  ]}
-                  key="list"
-                />
-                {/* <ProjectCard
-                  header="Sneak Peek"
-                  cardClass= "project-card-two"
-                  image="/homepage.jpg"
-                  key="peek"
-                /> */}
-                <ProjectCard
-                  header="Reflections"
-                  cardClass= "project-card-two"
-                  paragraph="While this product is currently at MVP stage, more features such as adding multiple players, improving game search and building a back-end for remote calendar are still being developed!"
-                  key="closing"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </div>
 
-      <div className="spacer h-[230svh] md:h-[230vh]" id="project-spacer2"></div>
+      <div className="spacer h-[230svh] md:h-[230vh]" id="project-spacer-two"></div>
       
     {/* Contact Section */}
       <div
