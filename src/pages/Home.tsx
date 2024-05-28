@@ -340,7 +340,7 @@ const Home = () => {
         <div className="flex h-full">
           <div className="w-full flex flex-col lg:flex-row relative project-container">
             <div className="w-full lg:w-7/12 p-4 space-y-4 rounded-xl glass-bg md:pb-8">
-              <img className="w-2/3" src="/gamesync_logo.png" alt="" />
+              <img className="w-2/3" src="/gamesync_logo.webp" alt="" />
               <p className="font-inconsolata md:text-xl xl:text-2xl text-white ">
                 A <span className="text-accentOrange">streamlined</span> and{" "}
                 <span className="text-accentOrange">intuitive</span> scheduler
@@ -354,8 +354,8 @@ const Home = () => {
               </p>
               <img
                 className="object-scale-down max-w-full max-h-[40%] rounded-2xl pt-2 bt-2"
-                src="/homepage.jpg"
-                alt="GameSync Landing Page"
+                src="/homepage.webp"
+                alt="GameSync Web App homepage with input fields for squad name and game selection."
                />  
               <div className="flex group">
                 <a
@@ -492,8 +492,8 @@ const Home = () => {
               </p>
               <img
                 className="object-scale-down max-w-full max-h-[40%] rounded-2xl pt-2 bt-2"
-                src="/homepage.jpg"
-                alt="GameSync Landing Page"
+                src="/butterpal.webp"
+                alt="ButterPal App screens of the homepage, login flows and request boards."
                />  
               <div className="flex group">
                 <a

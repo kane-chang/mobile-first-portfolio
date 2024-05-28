@@ -45,7 +45,7 @@ const NavTabs = () => {
         <div className="hidden md:flex space-x-5 text-xl">
         <a
             className="text-accentOrange hover:text-accentOrange/70 transition"
-            href="https://drive.google.com/file/d/1tC2l8JGctKf1myJKMnhQVQFyUexpRQZn/view"
+            href="https://drive.google.com/file/d/13OKsgXr2Koful0dnukJBT95ufN1MZCkE/view"
             target="_blank"
           >
             cv()
@@ -98,7 +98,7 @@ const NavTabs = () => {
           </NavLink>
           <a
             className="text-accentOrange hover:text-accentOrange/70 transition"
-            href="https://drive.google.com/file/d/1tC2l8JGctKf1myJKMnhQVQFyUexpRQZn/view"
+            href="https://drive.google.com/file/d/13OKsgXr2Koful0dnukJBT95ufN1MZCkE/view"
             target="_blank"
           >
             cv()
