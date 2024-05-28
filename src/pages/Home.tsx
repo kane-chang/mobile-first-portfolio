@@ -292,7 +292,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="spacer h-[130svh] md:h-screen" id="about-spacer"></div>
+      <div className="spacer h-[200svh] md:h-screen" id="about-spacer"></div>
       
     {/* Background Section - 3 Background Bullets  */}
       {/* <div
@@ -429,7 +429,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="spacer h-[230svh] md:h-[230vh]" id="project-spacer"></div>
+      <div className="spacer h-[300svh] md:h-[230vh]" id="project-spacer"></div>
 
       <div
         className="h-svh md:h-screen flex flex-col px-6 md:px-16 lg:px-36 xl:px-60"
@@ -525,7 +525,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="spacer h-[230svh] md:h-[230vh]" id="project-spacer-two"></div>
+      <div className="spacer h-[300svh] md:h-[230vh]" id="project-spacer-two"></div>
       
     {/* Contact Section */}
       <div
