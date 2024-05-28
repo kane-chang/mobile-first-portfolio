@@ -1,4 +1,3 @@
-import React from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -12,29 +11,29 @@ gsap.registerPlugin(TextPlugin);
 
 const Home = () => {
   useGSAP(() => {
-    /**scroll down animation */
+    /** Scroll down animation */
     let startAnimationTl = gsap.timeline();
 
     startAnimationTl.fromTo(
       ".cursor",
       { opacity: 1 },
-      { opacity: 0, repeat: 6, ease: "power4.inOut", duration: 0.8 }
+      { opacity: 0, repeat: 6, ease: "power4.inOut", duration: 0.5 }
     );
     startAnimationTl
       .to(
         ".name-header",
         {
           text: ".kane-chang",
-          duration: 3,
+          duration: 1.8,
           ease: "power3.in",
         },
         0.2
       )
-      .from(".subheader", { opacity: 0, x: -50, duration: 2 }, 3.7)
+      .from(".subheader", { opacity: 0, x: -50, duration: 1 }, 2)
       .from(".scrollDown", {
         opacity: 0,
-        y: 200,
-        duration: 2,
+        y: 30,
+        duration: 0.1,
         ease: "power2.out",
         stagger: 0.5,
       })
