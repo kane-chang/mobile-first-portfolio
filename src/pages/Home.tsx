@@ -56,7 +56,7 @@ const Home = () => {
       scrollTrigger: {
         trigger: "#gradientBg",
         start: "10% top",
-        markers: true,
+        // markers: true,
         scrub: true,
       },
     });
@@ -64,48 +64,39 @@ const Home = () => {
     t0.to("#scrollDown", { opacity: 0 })
     .to("#gradientBg", 
     {
-      "--color1": "255,160,0"
+      "--color1": "255,160,0",
+      immediateRender: false,
     })
-    .to("#gradientBg", {
+    
+    gsap.to("#gradientBg", {
       scrollTrigger: {
             trigger: "#projectOne",
             start: "top 80%",
-            endTrigger: "#projectTwo",
-            end: "top 80%",
             // markers: true,
             scrub: true,
           },
       "--color1": "92,107,192",
+      immediateRender: false,
     })
-    .to("#gradientBg", {
+    gsap.to("#gradientBg", {
       scrollTrigger: {
         trigger: "#projectTwo",
         start: "top 80%",
-        endTrigger: "#project-spacer-two",
-        end: "40% top",
         // markers: true,
         scrub: true,
       },
       "--color1": "198,255,0",
+      immediateRender: false,
     })
-    .to("#gradientBg", {
+    gsap.to("#gradientBg", {
       scrollTrigger: {
             trigger: "#contact-container",
             start: "top 80%",
             // markers: true,
             scrub: true,},
       "--color1": "255,160,0",
+      immediateRender: false,
     });
-
-    // gsap.to("#gradientBg", {
-    //   scrollTrigger: {
-    //     trigger: "#gradientBg",
-    //     start: "30% top",
-    //     // markers: true,
-    //     scrub: true,
-    //   },
-    //   "--color1": "255,160,0",
-    // });
 
     /** about section animation */
     let t1 = gsap.timeline({
@@ -158,17 +149,6 @@ const Home = () => {
     //   .to("#gradientBg", { "--color1": "92,107,192" })
     //   .addLabel("end");
 
-    /* GRADIENT BG PROJECT 1 */
-    // gsap.to("#gradientBg", {
-    //   scrollTrigger: {
-    //     trigger: "#projectOne",
-    //     start: "top 80%",
-    //     // markers: true,
-    //     scrub: true,
-    //   },
-    //   "--color1": "92,107,192",
-    // });
-
 
     /** stacked project cards animation */
     let t3 = gsap.timeline({
@@ -192,28 +172,6 @@ const Home = () => {
       })
       .addLabel("end");
 
-    
-      /* GRADIENT BG PROJECT 2 */
-      // gsap.fromTo("#gradientBg", {
-      //   scrollTrigger: {
-      //     trigger: "#projectTwo",
-      //     start: "top 80%",
-      //     endTrigger: "#project-spacer-two",
-      //     end: "40% top",
-      //     markers: true,
-      //     scrub: true,
-      //   },
-      //   "--color1": "198,255,0",
-      // }, {
-      //   scrollTrigger: {
-      //     trigger: "#contact-container",
-      //     start: "top 80%",
-      //     // markers: true,
-      //     scrub: true,
-      //   },
-      //   "--color1": "255,160,0",
-      // });
-  
   
       /** stacked project cards animation */
       let t4 = gsap.timeline({
@@ -236,16 +194,6 @@ const Home = () => {
           stagger: 0.5,
         })
         .addLabel("end");
-
-    // gsap.to("#gradientBg", {
-    //   scrollTrigger: {
-    //     trigger: "#contact-container",
-    //     start: "top 80%",
-    //     // markers: true,
-    //     scrub: true,
-    //   },
-    //   "--color1": "255,160,0",
-    // });
   });
 
   return (
@@ -587,8 +535,8 @@ const Home = () => {
           <h1 className="text-white font-inter font-bold text-5xl md:text-6xl xl:text-7xl">
             Contact
           </h1>
-          <p className="text-white font-inconsolata text-xl md:text-2xl xl:text-3xl font-bold">
-            Interested? Feel free to reach me via these channels!
+          <p className="text-white font-inconsolata text-lg md:text-xl xl:text-2xl font-bold">
+            For any inquiries, collaborations or opportunities, I can be reached via these channels!
           </p>
           <div className="space-y-3 pt-36">
             <ContactButton text="Email" url="mailto:kane.chang.fl@gmail.com" />
