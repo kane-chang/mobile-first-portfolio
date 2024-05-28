@@ -100,31 +100,42 @@ const Home = () => {
       .from(".about-card", { opacity: 0, xPercent: 100, stagger: 0.8 })
       .addLabel("end");
 
-    /** ghibli background fade in and out animation */
-    let t2 = gsap.timeline({
+    // /** ghibli background fade in and out animation */
+    // let t2 = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: "#background",
+    //     pin: true, // pin the trigger element while active
+    //     pinSpacing: false,
+    //     start: "top top", // when the top of the trigger hits the top of the viewport
+    //     endTrigger: "#ghibli-spacer",
+    //     end: "20% top", // end after scrolling 500px beyond the start
+    //     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+    //     snap: {
+    //       snapTo: "labels", // snap to the closest label in the timeline
+    //       duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
+    //       delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
+    //       ease: "power1.inOut", // the ease of the snap animation ("power3" by default)
+    //     },
+    //   },
+    // });
+
+    // t2.addLabel("bgIn")
+    //   .to("#background", { opacity: 1 })
+    //   .addLabel("bgOut")
+    //   .to("#background", { opacity: 0, delay: 1 })
+    //   .to("#gradientBg", { "--color1": "92,107,192" })
+    //   .addLabel("end");
+
+    gsap.to("#gradientBg", {
       scrollTrigger: {
-        trigger: "#background",
-        pin: true, // pin the trigger element while active
-        pinSpacing: false,
-        start: "top top", // when the top of the trigger hits the top of the viewport
-        endTrigger: "#ghibli-spacer",
-        end: "20% top", // end after scrolling 500px beyond the start
-        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-        snap: {
-          snapTo: "labels", // snap to the closest label in the timeline
-          duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
-          delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
-          ease: "power1.inOut", // the ease of the snap animation ("power3" by default)
-        },
+        trigger: "#projectOne",
+        start: "top 80%",
+        // markers: true,
+        scrub: true,
       },
+      "--color1": "92,107,192",
     });
 
-    t2.addLabel("bgIn")
-      .to("#background", { opacity: 1 })
-      .addLabel("bgOut")
-      .to("#background", { opacity: 0, delay: 1 })
-      .to("#gradientBg", { "--color1": "92,107,192" })
-      .addLabel("end");
 
     /** stacked project cards animation */
     let t3 = gsap.timeline({
@@ -259,7 +270,7 @@ const Home = () => {
       <div className="spacer h-[130svh] md:h-screen" id="about-spacer"></div>
       
     {/* Background Section - 3 Background Bullets  */}
-      <div
+      {/* <div
         className="opacity-0 h-lvh md:h-screen flex items-center px-6 md:px-16 lg:px-36 xl:px-60 bg-[url('./assets/sgbg_mobile.png')] md:bg-[url('./assets/sgbg_tablet.png')] lg:bg-[url('./assets/sgbg.png')] xl:bg-[url('./assets/sgbg_xl.png')] bg-center bg-cover bg-no-repeat"
         id="background"
       >
@@ -280,9 +291,9 @@ const Home = () => {
             &#93;;
           </p>
         </div>
-      </div>
+      </div> */}
 
-      <div className="spacer h-svh md:h-screen" id="ghibli-spacer"></div>
+      <div className="spacer h-[50svh] md:h-[50vh]" id="ghibli-spacer"></div>
       
     {/* Projects Section  */}
       <div
