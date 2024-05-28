@@ -307,7 +307,7 @@ const Home = () => {
           <div className="w-full flex flex-col lg:flex-row relative project-container">
             <div className="w-full lg:w-7/12 p-4 space-y-4 rounded-xl glass-bg md:pb-8">
               <img className="w-2/3" src="/gamesync_logo.png" alt="" />
-              <p className="font-inconsolata md:text-xl xl:text-2xl text-white md:pb-16 xxl:pb-56">
+              <p className="font-inconsolata md:text-xl xl:text-2xl text-white ">
                 A <span className="text-accentOrange">streamlined</span> and{" "}
                 <span className="text-accentOrange">intuitive</span> scheduler
                 tailored for{" "}
@@ -318,9 +318,14 @@ const Home = () => {
                   levels together!
                 </span>
               </p>
+              <img
+                className="object-scale-down max-w-full max-h-[40%] rounded-2xl pt-2 bt-2"
+                src="/homepage.jpg"
+                alt="GameSync Landing Page"
+               />  
               <div className="flex group">
                 <a
-                  className="font-inter text-lg self-center border rounded-3xl text-xl md:text-3xl xl:text-5xl px-6 py-1 group-hover:text-accentOrange group-hover:border-accentOrange transition"
+                  className="font-inter text-lg self-center border rounded-3xl text-xl md:text-2xl xl:text-4xl px-6 py-1 group-hover:text-accentOrange group-hover:border-accentOrange transition"
                   href="https://gamesync-game-session-scheduler.netlify.app/"
                   target="_blank"
                 >
@@ -420,7 +425,7 @@ const Home = () => {
               </p>
               <div className="flex group">
                 <a
-                  className="font-inter text-lg self-center border rounded-3xl text-xl md:text-3xl xl:text-5xl px-6 py-1 group-hover:text-accentOrange group-hover:border-accentOrange transition"
+                  className="font-inter text-lg self-center border rounded-3xl text-xl md:text-3xl xl:text-4xl px-6 py-1 group-hover:text-accentOrange group-hover:border-accentOrange transition"
                   href="https://gamesync-game-session-scheduler.netlify.app/"
                   target="_blank"
                 >
