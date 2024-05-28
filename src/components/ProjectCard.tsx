@@ -1,5 +1,6 @@
 interface ProjectCardProps {
   header: string;
+  cardClass: string;
   paragraph?: string;
   paragraph2?: string;
   image?: string;
@@ -10,6 +11,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({
   header,
+  cardClass,
   paragraph, paragraph2,
   image,
   alt,
@@ -17,7 +19,7 @@ const ProjectCard = ({
   listItems,
 }: ProjectCardProps) => {
   return (
-    <div className="flex flex-col bg-black rounded-xl border p-6 h-72 md:h-[22rem] xxl:h-[34.5rem] absolute w-full project-card">
+    <div className={cardClass + " flex flex-col bg-black rounded-xl border p-6 h-72 md:h-[22rem] xxl:h-[34.5rem] absolute w-full"}>
       <h2 className="font-inter font-medium text-4xl xl:text-5xl pb-4">{header}</h2>
       {paragraph ? <p className="font-inconsolata xl:text-xl">{paragraph}</p> : null}
       {paragraph2 ? <p className="font-inconsolata xl:text-xl pt-2">{paragraph2}</p> : null}
