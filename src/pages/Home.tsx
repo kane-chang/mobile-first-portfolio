@@ -325,7 +325,7 @@ const Home = () => {
         className="h-svh md:h-screen flex flex-col px-6 md:px-16 lg:px-36 xl:px-60"
         id="projectOne"
       >
-        <h1 className="text-white font-inter font-bold text-4xl md:text-5xl xl:text-6xl pb-8">
+        <h1 className="text-white font-inter font-bold text-4xl md:text-5xl xl:text-6xl pb-2 md:pb-8">
           Projects
         </h1>
         <div className="flex h-full">
@@ -343,11 +343,13 @@ const Home = () => {
                   levels together!
                 </span>
               </p>
-              <img
-                className="object-scale-down max-w-full max-h-[40%] rounded-2xl pt-2 bt-2"
-                src="/homepage.webp"
-                alt="GameSync Web App homepage with input fields for squad name and game selection."
-               />  
+              <div>
+                <img
+                  className="max-w-full max-h-[20vh] md:max-h-[25vh] lg:max-h-[30vh] rounded-2xl "
+                  src="/homepage.webp"
+                  alt="GameSync Web App homepage with input fields for squad name and game selection."
+                />  
+               </div>
               <div className="flex group">
                 <a
                   className="font-inter text-lg self-center border rounded-3xl text-xl md:text-2xl xl:text-4xl px-6 py-1 group-hover:text-accentOrange group-hover:border-accentOrange transition"
@@ -434,9 +436,9 @@ const Home = () => {
         id="projectTwo"
       >
         <div className="flex h-full">
-          <div className="w-full flex flex-col lg:flex-row relative project-container">
+          <div className="w-full flex flex-col-reverse lg:flex-row relative project-container">
             
-            <div className="w-full lg:w-5/12 project-cards relative h-80">
+            <div className="w-full lg:w-5/12 project-cards relative h-[100svh] md:h-[100vh] lg:h-80">
               <div className="relative">
                 <ProjectCard
                   header="Problem"
@@ -481,11 +483,13 @@ const Home = () => {
               <p className="font-inconsolata md:text-xl xl:text-2xl text-white">
                 An <span className="text-accentOrange">innovative</span>, high-performance mobile app built to <span className="text-accentOrange">connect neighbours</span> and <span className="text-accentOrange">crowdsource</span> local grocery runs for IOS and Android.
               </p>
-              <img
-                className="object-scale-down max-w-full max-h-[40%] rounded-2xl pt-2 bt-2"
-                src="/butterpal.webp"
-                alt="ButterPal App screens of the homepage, login flows and request boards."
-               />  
+              <div>
+                <img
+                  className="max-w-full max-h-[20vh] md:max-h-[30vh] lg:max-h-[40vh] rounded-2xl "
+                  src="/butterpal.webp"
+                  alt="ButterPal App screens of the homepage, login flows and request boards."
+                />  
+               </div>
               <div className="flex group">
                 <a
                   className="font-inter text-lg self-center border rounded-3xl text-xl md:text-3xl xl:text-4xl px-6 py-1 group-hover:text-accentOrange group-hover:border-accentOrange transition"
