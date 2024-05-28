@@ -32,10 +32,10 @@ const Home = () => {
       .from(".subheader", { opacity: 0, x: -50, duration: 1 }, 2)
       .from(".scrollDown", {
         opacity: 0,
-        y: 30,
-        duration: 0.1,
+        y: 10,
+        duration: 0.2,
         ease: "power2.out",
-        stagger: 0.5,
+        stagger: 0.2,
       })
       .to("#scrollDownIcon", { y: 6, yoyo: true, repeat: -1 });
 
@@ -56,12 +56,44 @@ const Home = () => {
       scrollTrigger: {
         trigger: "#gradientBg",
         start: "10% top",
-        // markers: true,
+        markers: true,
         scrub: true,
       },
     });
 
-    t0.to("#scrollDown", { opacity: 0 }).to("#gradientBg", {
+    t0.to("#scrollDown", { opacity: 0 })
+    .to("#gradientBg", 
+    {
+      "--color1": "255,160,0"
+    })
+    .to("#gradientBg", {
+      scrollTrigger: {
+            trigger: "#projectOne",
+            start: "top 80%",
+            endTrigger: "#projectTwo",
+            end: "top 80%",
+            // markers: true,
+            scrub: true,
+          },
+      "--color1": "92,107,192",
+    })
+    .to("#gradientBg", {
+      scrollTrigger: {
+        trigger: "#projectTwo",
+        start: "top 80%",
+        endTrigger: "#project-spacer-two",
+        end: "40% top",
+        // markers: true,
+        scrub: true,
+      },
+      "--color1": "198,255,0",
+    })
+    .to("#gradientBg", {
+      scrollTrigger: {
+            trigger: "#contact-container",
+            start: "top 80%",
+            // markers: true,
+            scrub: true,},
       "--color1": "255,160,0",
     });
 
@@ -126,15 +158,16 @@ const Home = () => {
     //   .to("#gradientBg", { "--color1": "92,107,192" })
     //   .addLabel("end");
 
-    gsap.to("#gradientBg", {
-      scrollTrigger: {
-        trigger: "#projectOne",
-        start: "top 80%",
-        // markers: true,
-        scrub: true,
-      },
-      "--color1": "92,107,192",
-    });
+    /* GRADIENT BG PROJECT 1 */
+    // gsap.to("#gradientBg", {
+    //   scrollTrigger: {
+    //     trigger: "#projectOne",
+    //     start: "top 80%",
+    //     // markers: true,
+    //     scrub: true,
+    //   },
+    //   "--color1": "92,107,192",
+    // });
 
 
     /** stacked project cards animation */
@@ -160,15 +193,26 @@ const Home = () => {
       .addLabel("end");
 
     
-      gsap.to("#gradientBg", {
-        scrollTrigger: {
-          trigger: "#projectTwo",
-          start: "top 80%",
-          // markers: true,
-          scrub: true,
-        },
-        "--color1": "198,255,0",
-      });
+      /* GRADIENT BG PROJECT 2 */
+      // gsap.fromTo("#gradientBg", {
+      //   scrollTrigger: {
+      //     trigger: "#projectTwo",
+      //     start: "top 80%",
+      //     endTrigger: "#project-spacer-two",
+      //     end: "40% top",
+      //     markers: true,
+      //     scrub: true,
+      //   },
+      //   "--color1": "198,255,0",
+      // }, {
+      //   scrollTrigger: {
+      //     trigger: "#contact-container",
+      //     start: "top 80%",
+      //     // markers: true,
+      //     scrub: true,
+      //   },
+      //   "--color1": "255,160,0",
+      // });
   
   
       /** stacked project cards animation */
@@ -193,15 +237,15 @@ const Home = () => {
         })
         .addLabel("end");
 
-    gsap.to("#gradientBg", {
-      scrollTrigger: {
-        trigger: "#contact-container",
-        start: "top 80%",
-        // markers: true,
-        scrub: true,
-      },
-      "--color1": "255,160,0",
-    });
+    // gsap.to("#gradientBg", {
+    //   scrollTrigger: {
+    //     trigger: "#contact-container",
+    //     start: "top 80%",
+    //     // markers: true,
+    //     scrub: true,
+    //   },
+    //   "--color1": "255,160,0",
+    // });
   });
 
   return (
@@ -261,16 +305,15 @@ const Home = () => {
             This is <span className="text-accentOrange">me.</span>
           </h1>
           <p className="text-white font-inconsolata text-xl md:text-2xl xl:text-3xl">
-            I am a <span className="text-accentGreen">Frontend Developer </span>
+            I am a <span className="text-accentGreen">Frontend Developer</span>,
             <br className="hidden md:block"></br>proficient in modern frontend
-            frameworks such as <span className="text-accentGreen">React</span> and <span className="text-accentGreen">TypeScript</span>, with diverse experience across roles such as
-            communications, non-profit and education.
+            technologies such as <span className="text-accentGreen">React</span> and <span className="text-accentGreen">TypeScript</span>, with track record of high performance and proactiveness in ambiguous and fast-paced environments
           </p>
         </div>
         <div className="about-cards space-y-2 md:space-x-6 flex flex-col md:flex-row items-center">
           <AboutCard
             header="Characteristics"
-            paragraph="Philosophy major turned web developer, with a love for logic and learning"
+            paragraph="Adaptable and analytical frontend developer from philosophy background, with a love for logic and learning"
             tagOne="Personality"
             tagTwo="Story"
             iconImg="/smile.svg"
@@ -280,7 +323,7 @@ const Home = () => {
           />
           <AboutCard
             header="Technical Skills"
-            paragraph="HTML5, CSS3, JavaScript, TypeScript, React, Tailwind, Bootstrap 5, jQuery, Node.js, Python & more"
+            paragraph="HTML5, CSS3, JavaScript, TypeScript, React, Tailwind, Jest, jQuery, Node.js, Next.js Python & more"
             tagOne="Hard"
             tagTwo="Tech"
             iconImg="/gear.svg"
