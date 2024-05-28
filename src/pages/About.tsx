@@ -56,7 +56,7 @@ const About = () => {
           <div id="kane-photo" className="">
             <img
               className="pb-2 object-contain max-h-[50svh] rounded-xl"
-              src="/kane_photo.jpg"
+              src="/kane_photo.webp"
               alt="photo of kane standing in front of a river and bridge"
             />
             <p className="font-inconsolata text-md md:text-lg xl:text-xl">
@@ -65,19 +65,28 @@ const About = () => {
           </div>
           <div id="kane-info" className="md:w-3/4">
             <p className="font-inconsolata md:text-xl xxl:text-2xl">
-              Frontend developer heavily influenced by storytelling and philosophy.
-              Addicted to traveling, visual arts, and nerdy games.{" "}
+              Frontend Developer with multiple proven project experiences as the
+              primary developer with React, Typescript, and JavaScript.{" "}
               <br className="md:hidden"></br>
-              <br className="md:hidden"></br>I see myself as a craftsperson in
-              the vast space of the internet, creating stunning constructions
-              lasting potentially for an eternity or an instant.
+              <br className="md:hidden"></br>Track record of high performance,
+              quick learning, and proactiveness working in ambiguous and
+              fast-paced environments.
             </p>
             <br></br>
             <p className="font-inconsolata md:text-xl xl:text-2xl">
-              From Singapore, based in London.
+              Based in London (With Right to Work)
             </p>
-            <p className="font-inconsolata text-sm xl:text-xl">You can view my cv <a className="text-accentGreen hover:text-accentGreen/70 transition" href="https://drive.google.com/file/d/1tC2l8JGctKf1myJKMnhQVQFyUexpRQZn/view"
-            target="_blank">here</a>.</p>
+            <p className="font-inconsolata text-sm xl:text-xl">
+              You can view my cv{" "}
+              <a
+                className="text-accentGreen hover:text-accentGreen/70 transition"
+                href="https://drive.google.com/file/d/13OKsgXr2Koful0dnukJBT95ufN1MZCkE/view?usp=sharing"
+                target="_blank"
+              >
+                here
+              </a>
+              .
+            </p>
             <br></br>
             <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-4 pb-16 aboutPageCards md:hidden xl:flex">
               <AboutCard
@@ -103,9 +112,9 @@ const About = () => {
                 list={true}
                 listItems={[
                   "Feedback = Growth",
-                  "Not a mindless coder",
-                  "Honest communication => Great teams",
-                  "Talk to me about work, but also about your life",
+                  "Thoughtful and deliberate code",
+                  "Honest communication create great teams",
+                  "User-centric, authentic & tenacious",
                 ]}
                 tagOne="Soft"
                 tagTwo="People"
@@ -119,9 +128,9 @@ const About = () => {
                 list={true}
                 listItems={[
                   "I eat hotpot ",
-                  "I read about backend development",
-                  "I play tabletop games with friends",
-                  "I travel and see the world through my lens",
+                  "I play tabletop games",
+                  "I read about tech trends",
+                  "I travel to engage different perspectives",
                 ]}
                 tagOne="Interests"
                 tagTwo="Fun!"
