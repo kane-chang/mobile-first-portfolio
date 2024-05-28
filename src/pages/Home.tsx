@@ -162,6 +162,7 @@ const Home = () => {
 
   return (
     <>
+    {/* Gradient Div */}
       <div
         className="h-svh w-svw md:h-screen md:w-screen absolute overflow-hidden top-0 left-0 bg-black -z-10 transition"
         id="gradientBg"
@@ -174,6 +175,8 @@ const Home = () => {
           <div className="g5 absolute animate-circle-ease"></div>
         </div>
       </div>
+
+    {/* Hero Section - Name and Role */}
       <div
         className="h-svh md:h-screen flex flex-col justify-end px-6 md:px-16 lg:px-36 xl:px-60"
         id="hero"
@@ -200,6 +203,8 @@ const Home = () => {
           ></i>
         </div>
       </div>
+
+    {/* About Section - Description and AboutCards */}
       <div
         className="h-[150svh] md:h-screen flex flex-col justify-center overflow-hidden px-6 md:px-16 lg:px-36 xl:px-60 space-y-8 md:space-y-16"
         id="about"
@@ -251,7 +256,10 @@ const Home = () => {
           />
         </div>
       </div>
+
       <div className="spacer h-[130svh] md:h-screen" id="about-spacer"></div>
+      
+    {/* Background Section - 3 Background Bullets  */}
       <div
         className="opacity-0 h-lvh md:h-screen flex items-center px-6 md:px-16 lg:px-36 xl:px-60 bg-[url('./assets/sgbg_mobile.png')] md:bg-[url('./assets/sgbg_tablet.png')] lg:bg-[url('./assets/sgbg.png')] xl:bg-[url('./assets/sgbg_xl.png')] bg-center bg-cover bg-no-repeat"
         id="background"
@@ -274,10 +282,10 @@ const Home = () => {
           </p>
         </div>
       </div>
+
       <div className="spacer h-svh md:h-screen" id="ghibli-spacer"></div>
-      {/* <div className="flex px-6 lg:px-36 xl:px-60 ">
-          <h1 className="text-white font-inter font-bold text-4xl md:text-5xl xl:text-6xl pb-8">Projects</h1>
-        </div> */}
+      
+    {/* Projects Section  */}
       <div
         className="h-svh md:h-screen flex flex-col px-6 md:px-16 lg:px-36 xl:px-60"
         id="projectOne"
@@ -373,7 +381,10 @@ const Home = () => {
           </div>
         </div>
       </div>
+
       <div className="spacer h-[230svh] md:h-[230vh]" id="project-spacer"></div>
+      
+    {/* Contact Section */}
       <div
         className="h-svh md:h-screen flex items-end pb-6 px-6 md:px-16 lg:px-36 xl:px-60"
         id="contact"
@@ -398,6 +409,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* Footer Section  */}
       <div className="flex items-center justify-center">
         <h3 className="font-inconsolata text-sm pb-6">
           Made with 🤍 by Kane Chang • 2024

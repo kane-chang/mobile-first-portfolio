@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ProjectCardProps {
   header: string;
   paragraph?: string;
