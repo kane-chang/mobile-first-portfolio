@@ -53,10 +53,10 @@ const AboutCard = ({
         ) : null}
       </div>
       <div className="about-tags  flex space-x-2 pt-4">
-        <div className="border rounded-3xl font-inter text-xs lg:text-sm xxl:text-xl self-center px-2">
+        <div className="border rounded-3xl font-inter text-xs lg:text-sm xxl:text-lg self-center px-2">
           <p>{tagOne}</p>
         </div>
-        <div className="border rounded-3xl font-inter text-xs lg:text-sm xxl:text-xl self-center px-2">
+        <div className="border rounded-3xl font-inter text-xs lg:text-sm xxl:text-lg self-center px-2">
           <p>{tagTwo}</p>
         </div>
         <img src={iconImg} alt={imgAlt} />
