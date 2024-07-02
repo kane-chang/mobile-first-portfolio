@@ -238,10 +238,9 @@ const Home = () => {
           <p className="text-white font-inconsolata text-xl md:text-2xl xl:text-3xl">
             I am a <span className="text-accentGreen">Frontend Developer</span>,
             <br className="hidden md:block"></br>proficient in modern frontend
-            technologies such as <span className="text-accentGreen">React</span>{" "}
-            and <span className="text-accentGreen">TypeScript</span>, with track
-            record of high performance and proactiveness in ambiguous and
-            fast-paced environments
+            technologies such as React and TypeScript, with track record of high
+            performance and proactiveness in ambiguous and fast-paced
+            environments
           </p>
         </div>
         <div className="about-cards space-y-2 md:space-x-6 flex flex-col md:flex-row items-center">
@@ -258,7 +257,7 @@ const Home = () => {
           <AboutCard
             header="Technical Skills"
             paragraph="HTML5, CSS3, JavaScript, TypeScript, React, Tailwind, Jest, jQuery, Node.js, Next.js Python & more"
-            tagOne="Hard"
+            tagOne="Skills"
             tagTwo="Tech"
             iconImg="/gear.svg"
             imgAlt="Gear Icon"
@@ -268,7 +267,7 @@ const Home = () => {
           <AboutCard
             header="Soft Skills"
             paragraph="Strong work ethic, proactive self-starter. Open and empathetic communicator"
-            tagOne="Soft"
+            tagOne="Skills"
             tagTwo="People"
             iconImg="/chat.svg"
             imgAlt="Chat Icon"
@@ -317,7 +316,7 @@ const Home = () => {
         </h1>
         <div className="flex h-full">
           <div className="w-full flex flex-col lg:flex-row relative project-container">
-            <div className="w-full lg:w-7/12 p-4 space-y-4 rounded-xl glass-bg md:pb-8">
+            <div className="w-full lg:w-7/12 p-4 space-y-4 rounded-xl glass-bg md:pb-8 md:p-7 ">
               <img
                 className="w-[45%]"
                 src="https://smarkets.com/static/assets/smarkets-logo.33cf24e1279443342527.svg"
@@ -325,10 +324,10 @@ const Home = () => {
               />
               <p className="font-inconsolata md:text-xl xl:text-2xl text-white ">
                 {
-                  "A simplified Smarkets Betting Exchange clone using Next.js, React and Typescript and utilised 4 API endpoints (Events, Markets, Contracts and Prices) from Smarkets API."
+                  "A Smarkets Betting Exchange clone using Next.js, React and Typescript leveraging 4 API endpoints (Events, Markets, Contracts and Prices) from Smarkets API."
                 }
               </p>
-              <div>
+              <div className="pb-4" className="pb-4">
                 <img
                   className="max-w-full max-h-[20vh] md:max-h-[25vh] lg:max-h-[30vh] rounded-2xl "
                   src="/smarkets-preview.webp"
@@ -371,7 +370,7 @@ const Home = () => {
                 <ProjectCard
                   header="Goals"
                   cardClass="project-card"
-                  paragraph="A 6-hour challenge to build a web app using Smarket API endpoints, retrieving real-time exchange information:"
+                  paragraph="A 6-hour challenge to build a web app retrieving real-time exchange information:"
                   paragraph2=" "
                   list={true}
                   listItems={[
@@ -392,7 +391,7 @@ const Home = () => {
                     "date-fns",
                   ]}
                   key="list"
-                  />
+                />
                 <ProjectCard
                   header="Challenges"
                   cardClass="project-card"
@@ -451,7 +450,7 @@ const Home = () => {
                   key="bg"
                 />
                 <ProjectCard
-                  header="My Role"
+                  header="Responsibilities"
                   cardClass="project-card-two"
                   paragraph="Front-end Web Developer and Team Lead"
                   paragraph2="Led the implementation of dynamic scheduler, local storage integration and summary page. Collaborated closely with three other web developers."
@@ -485,8 +484,8 @@ const Home = () => {
                 />
               </div>
             </div>
-            <div className="w-full lg:w-7/12 p-4 space-y-4 rounded-xl glass-bg md:pb-8">
-              <img className="w-2/3" src="/gamesync_logo.webp" alt="" />
+            <div className="w-full lg:w-7/12 p-4 space-y-4 rounded-xl glass-bg md:pb-8 md:p-7">
+              <img className="w-[45%]" src="/gamesync_logo.webp" alt="" />
               <p className="font-inconsolata md:text-xl xl:text-2xl text-white ">
                 A streamlined and intuitive scheduler tailored for busy gamers,
                 by gamers.{" "}
@@ -495,7 +494,7 @@ const Home = () => {
                   levels together!
                 </span>
               </p>
-              <div>
+              <div className="pb-4">
                 <img
                   className="max-w-full max-h-[20vh] md:max-h-[25vh] lg:max-h-[30vh] rounded-2xl "
                   src="/homepage.webp"
@@ -549,7 +548,7 @@ const Home = () => {
       >
         <div className="flex h-full">
           <div className="w-full flex flex-col lg:flex-row relative project-container">
-            <div className="w-full lg:w-7/12 p-4 space-y-4 rounded-xl glass-bg md:pb-8">
+            <div className="w-full lg:w-7/12 p-4 space-y-4 rounded-xl glass-bg md:pb-8 md:p-7">
               <h2 className="font-inter font-bold text-4xl md:text-5xl xl:text-6xl">
                 ButterPal
               </h2>
@@ -558,7 +557,7 @@ const Home = () => {
                 neighbours and crowdsource local grocery runs for IOS and
                 Android.
               </p>
-              <div>
+              <div className="lg:pb-4">
                 <img
                   className="max-w-full max-h-[20vh] md:max-h-[30vh] lg:max-h-[40vh] rounded-2xl "
                   src="/butterpal.webp"
@@ -606,7 +605,7 @@ const Home = () => {
                   key="bg"
                 />
                 <ProjectCard
-                  header="My Role"
+                  header="Responsibilities"
                   cardClass="project-card-three"
                   paragraph="Fullstack Mobile Developer"
                   paragraph2="Developed mobile application from end-to-end, collaborating closely with UX Designer to bring pixel-perfect user interfaces to life"
