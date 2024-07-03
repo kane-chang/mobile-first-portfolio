@@ -323,11 +323,15 @@ const Home = () => {
                 alt="Smarkets Logo"
               />
               <p className="font-inconsolata md:text-xl xl:text-2xl text-white ">
-                {
-                  "A Smarkets Betting Exchange clone using Next.js, React and Typescript leveraging 4 API endpoints (Events, Markets, Contracts and Prices) from Smarkets API."
-                }
+                A Smarkets Betting Exchange clone using Next.js, React and
+                Typescript
+                <span className="hidden md:inline">
+                  {
+                    " leveraging 4 API endpoints (Events, Markets, Contracts and Prices) from Smarkets API."
+                  }
+                </span>
               </p>
-              <div className="pb-4" className="pb-4">
+              <div className="hidden pb-4 lg:block">
                 <img
                   className="max-w-full max-h-[20vh] md:max-h-[25vh] lg:max-h-[30vh] rounded-2xl "
                   src="/smarkets-preview.webp"
@@ -370,12 +374,12 @@ const Home = () => {
                 <ProjectCard
                   header="Goals"
                   cardClass="project-card"
-                  paragraph="A 6-hour challenge to build a web app retrieving real-time exchange information:"
+                  paragraph="A 6-hour challenge to build a web app retrieving real-time info:"
                   paragraph2=" "
                   list={true}
                   listItems={[
                     "Modular and flexible code structure that can scale quickly",
-                    "Replicate the unique feel and brand of Smarkets, adhering closely to fonts, colours and UI design",
+                    "Replicate the unique feel of Smarkets - brand fonts, colours and UI design",
                   ]}
                   key="bg"
                 />
@@ -396,26 +400,20 @@ const Home = () => {
                   header="Challenges"
                   cardClass="project-card"
                   paragraph="API Rate Limits on Requests & Dependent Data Fetches"
-                  paragraph2="A limit of 20 requests/min meant that I had to get creative with my data fetching optimisations:"
+                  paragraphResponsive="With a limit of 20 requests/min, I had to get creative with my data fetching optimisations"
+                  paragraph2="Technical solutions:"
                   list
                   listItems={[
                     "Reduce any unnecessary requests",
-                    "Single combined fetch call with prop drilling",
                     "Maximise parallel fetch calls",
                     "Data Streaming optimisations using Suspense",
                   ]}
                   key="role"
                 />
-                {/* <ProjectCard
-                  header="Sneak Peek"
-                  cardClass= "project-card"
-                  image="/homepage.jpg"
-                  key="peek"
-                /> */}
                 <ProjectCard
-                  header="Future Improvements"
+                  header="Improvements"
                   cardClass="project-card"
-                  paragraph="As the web app was completed within 6 hours, some key improvements I would love to make are:"
+                  paragraph="Given more time, some key improvements I would make are:"
                   paragraph2=" "
                   list
                   listItems={[
@@ -424,6 +422,13 @@ const Home = () => {
                     "Build feature page to showcase most popular markets",
                   ]}
                   key="closing"
+                />
+                <ProjectCard
+                  header="Preview"
+                  cardClass="project-card lg:hidden"
+                  image="/smarkets-preview.webp"
+                  alt="Smarkets Web App homepage live updated betting exchange information and events."
+                  key="preview"
                 />
               </div>
             </div>
@@ -470,17 +475,18 @@ const Home = () => {
                   ]}
                   key="list"
                 />
-                {/* <ProjectCard
-                  header="Sneak Peek"
-                  cardClass= "project-card-two"
-                  image="/homepage.jpg"
-                  key="peek"
-                /> */}
                 <ProjectCard
                   header="Reflections"
                   cardClass="project-card-two"
                   paragraph="While this product is currently at MVP stage, more features such as adding multiple players, improving game search and building a back-end for remote calendar are still being developed!"
                   key="closing"
+                />
+                <ProjectCard
+                  header="Preview"
+                  cardClass="project-card-two lg:hidden"
+                  image="/homepage.webp"
+                  alt="GameSync Web App homepage with input fields for squad name and game selection."
+                  key="preview"
                 />
               </div>
             </div>
@@ -494,7 +500,7 @@ const Home = () => {
                   levels together!
                 </span>
               </p>
-              <div className="pb-4">
+              <div className="hidden pb-4 lg:block">
                 <img
                   className="max-w-full max-h-[20vh] md:max-h-[25vh] lg:max-h-[30vh] rounded-2xl "
                   src="/homepage.webp"
@@ -557,7 +563,7 @@ const Home = () => {
                 neighbours and crowdsource local grocery runs for IOS and
                 Android.
               </p>
-              <div className="lg:pb-4">
+              <div className="hidden pb-4 lg:block">
                 <img
                   className="max-w-full max-h-[20vh] md:max-h-[30vh] lg:max-h-[40vh] rounded-2xl "
                   src="/butterpal.webp"
@@ -626,18 +632,19 @@ const Home = () => {
                   ]}
                   key="list"
                 />
-                {/* <ProjectCard
-                  header="Sneak Peek"
-                  cardClass= "project-card-three"
-                  image="/homepage.jpg"
-                  key="peek"
-                /> */}
                 <ProjectCard
                   header="Reflections"
                   cardClass="project-card-three"
                   paragraph="I am proud to have built ButterPal as a way for me to refine my skills in React Native and expand my tech stack"
                   paragraph2="It is currently in testing phase and will soon be launched"
                   key="closing"
+                />
+                <ProjectCard
+                  header="Preview"
+                  cardClass="project-card-three lg:hidden"
+                  image="/butterpal.webp"
+                  alt="ButterPal App screens of the homepage, login flows and request boards."
+                  key="preview"
                 />
               </div>
             </div>
